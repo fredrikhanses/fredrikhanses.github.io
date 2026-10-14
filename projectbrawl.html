@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Brawl | Game Project | Fredrik Hanses</title>
+  <meta name="description" content="Retro pixel-art local multiplayer beat-em-up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <nav class="section-nav" aria-label="On this page">
+    <ul>
+      <li><a href="#top"><span>Top</span></a></li>
+      <li><a href="#gameinfo"><span>Game Info</span></a></li>
+      <li><a href="#combatlogic"><span>Combat Logic</span></a></li>
+      <li><a href="#animationlogic"><span>Animation Logic</span></a></li>
+      <li><a href="#movementlogic"><span>Movement Logic</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="container" id="top">
+    <section class="game-info" id="gameinfo">
+      <img class="game-poster" src="assets/images/posters/projectbrawl.png" alt="Project Brawl">
+
+      <div class="game-summary">
+        <p class="eyebrow">Game Info</p>
+        <h1>A fighting game where the goal is to knock out all other players and be the last one standing.</h1>
+        <div class="btn-group">
+          <a class="btn btn-solid" href="https://github.com/fredrikhanses/ProjectBrawl" target="_blank" rel="noopener">View Project</a>
+          <a class="btn btn-solid" href="https://fredrikhanses.itch.io/project-brawl" target="_blank" rel="noopener">Download Game</a>
+        </div>
+      </div>
+
+      <div class="media youtube game-video" data-youtube="z5BRx-yrs8g" data-title="Project Brawl video"></div>
+
+      <aside class="project-facts">
+        <h4>My Contribution</h4>
+        <ul>
+          <li class="group"><a href="#combatlogic">Gameplay</a></li>
+          <li><a href="#animationlogic">Animation Logic</a></li>
+          <li><a href="#combatlogic">Combat Logic</a></li>
+          <li><a href="#movementlogic">Movement Logic</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="feature" id="combatlogic">
+      <header class="feature-head">
+        <p class="eyebrow">Combat Logic</p>
+        <h2>Combat Logic</h2>
+        <p class="tagline">Do not repeat yourself</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/projectbrawl/combat.mp4" poster="assets/images/projectbrawl/combat.jpg"></video></figure>
+        <div>
+          <p>The combat mechanics evolved several times and became so distinct that every character had to get its own script in the end.</p>
+          <div class="btn-group"><button class="btn" data-code="combat-logic">Combat Logic Code</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="animationlogic">
+      <header class="feature-head">
+        <p class="eyebrow">Animation Logic</p>
+        <h2>Animation Logic</h2>
+        <p class="tagline">Do not skip the research</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><img class="zoomable" src="assets/images/projectbrawl/state-machine.png" alt="Animator state machine"></figure>
+        <div>
+          <p>I think I started working in the animator before I had learned about some essential features which could have improved my workflow significantly. I knew the basics and did not think anything else was necessary for us during this project. But when I learned about layered structures it greatly improved my workflow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="movementlogic">
+      <header class="feature-head">
+        <p class="eyebrow">Movement Logic</p>
+        <h2>Movement Logic</h2>
+        <p class="tagline">Exercising is fun</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/projectbrawl/movement.mp4" poster="assets/images/projectbrawl/movement.jpg"></video></figure>
+        <div>
+          <p>I tested different ways and settled with setting the velocity on the players after showing, playtesting and discussing with the other team members.</p>
+          <div class="btn-group"><button class="btn" data-code="movement-logic">Movement Logic Code</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Code popups: paste code inside each <code> ================= -->
+  <template id="code-combat-logic"><pre><code class="language-csharp">// Combat Logic Code
+// TODO: paste code here</code></pre></template>
+  <template id="code-movement-logic"><pre><code class="language-csharp">// Movement Logic Code
+// TODO: paste code here</code></pre></template>
+
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>

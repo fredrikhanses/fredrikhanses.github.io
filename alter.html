@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alter | Game Project | Fredrik Hanses</title>
+  <meta name="description" content="Third-person narrative platformer set in a mysterious and spiritual realm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <nav class="section-nav" aria-label="On this page">
+    <ul>
+      <li><a href="#top"><span>Top</span></a></li>
+      <li><a href="#gameinfo"><span>Game Info</span></a></li>
+      <li><a href="#mountai"><span>Mount &amp; AI</span></a></li>
+      <li><a href="#gamelogic"><span>Game Logic</span></a></li>
+      <li><a href="#changemood"><span>Change Mood</span></a></li>
+      <li><a href="#sfxvfx"><span>SFX &amp; VFX Systems</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="container" id="top">
+    <section class="game-info" id="gameinfo">
+      <img class="game-poster" src="assets/images/posters/alter.png" alt="Alter">
+
+      <div class="game-summary">
+        <p class="eyebrow">Game Info</p>
+        <h1>In this third-person platformer set in a mysterious and spiritual realm, you are on a journey of ridding a dark world from its corruption and eventual decay.</h1>
+        <div class="btn-group">
+          <a class="btn btn-solid" href="https://github.com/fredrikhanses/Dark" target="_blank" rel="noopener">View Project</a>
+          <a class="btn btn-solid" href="https://fredrikhanses.itch.io/alter" target="_blank" rel="noopener">Download Game</a>
+        </div>
+      </div>
+
+      <div class="media youtube game-video" data-youtube="8orN89OG8_A" data-title="Alter video"></div>
+
+      <aside class="project-facts">
+        <h4>My Contribution</h4>
+        <ul>
+          <li class="group"><a href="#gamelogic">Systems</a></li>
+          <li><a href="#gamelogic">Game Logic</a></li>
+          <li><a href="#sfxvfx">SFX System</a></li>
+          <li><a href="#sfxvfx">VFX System</a></li>
+          <li class="group"><a href="#mountai">Gameplay</a></li>
+          <li><a href="#mountai">Companion Mount</a></li>
+          <li><a href="#mountai">Artificial Intelligence</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="feature" id="mountai">
+      <header class="feature-head">
+        <p class="eyebrow">Mount &amp; AI</p>
+        <h2>Mountable Companion and AI</h2>
+        <p class="tagline">Kill your darlings</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/alter/mount.mp4" poster="assets/images/alter/mount.jpg"></video></figure>
+        <div>
+          <p>As one of my first tasks I made a mountable companion. As the game evolved towards more of a platformer than an exploring game we decided not to use it. Also the landscape shaped up to be more mountainous than steppe like.</p>
+          <div class="btn-group">
+            <button class="btn" data-code="mount-control">Mount Control Code</button>
+            <button class="btn" data-code="mount-ai">Mount AI Code</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="gamelogic">
+      <header class="feature-head">
+        <p class="eyebrow">Game Logic</p>
+        <h2>Overarching Technical Responsibility</h2>
+        <p class="tagline">Gluing it all together</p>
+      </header>
+      <div class="feature-item">
+        <div class="gallery cols-3">
+          <figure><img src="assets/images/alter/normal.png" alt="Normal"><figcaption>Normal</figcaption></figure>
+          <figure><img src="assets/images/alter/corrupted.png" alt="Corrupted"><figcaption>Corrupted</figcaption></figure>
+          <figure><img src="assets/images/alter/full-corrupted.png" alt="Fully corrupted"><figcaption>Fully corrupted</figcaption></figure>
+        </div>
+        <div>
+          <p>The game manager kept track of the game state and adjusted things accordingly. These were things like playing the correct music, opening or blocking paths for the player and changing the visuals of the level.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="changemood">
+      <header class="feature-head">
+        <p class="eyebrow">Change Mood</p>
+        <h2>Alter the environment</h2>
+        <p class="tagline">Make the player feel progression</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/alter/change-mood.mp4" poster="assets/images/alter/change-mood.jpg"></video></figure>
+        <div>
+          <p>As part of our game’s core narrative, the world and the environment needed to change and hint to the player what was going on. Here we are changing the post processing effects and colors to get the mood we want.</p>
+          <div class="btn-group"><button class="btn" data-code="change-mood">Change Mood Code</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="sfxvfx">
+      <header class="feature-head">
+        <p class="eyebrow">SFX &amp; VFX Systems</p>
+        <h2>SFX &amp; VFX systems</h2>
+        <p class="tagline">Make it pop</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/alter/sfx-vfx.mp4" poster="assets/images/alter/sfx-vfx.jpg"></video></figure>
+        <div>
+          <p>I made a system for playing different sound effects and a system for displaying visual effects. They were used for the player character's footsteps and abilities.</p>
+          <div class="btn-group">
+            <button class="btn" data-code="sfx-system">SFX System Code</button>
+            <button class="btn" data-code="vfx-system">VFX System Code</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Code popups: paste code inside each <code> ================= -->
+  <template id="code-mount-control"><pre><code class="language-csharp">// Mount Control Code
+// TODO: paste code here</code></pre></template>
+  <template id="code-mount-ai"><pre><code class="language-csharp">// Mount AI Code
+// TODO: paste code here</code></pre></template>
+  <template id="code-change-mood"><pre><code class="language-csharp">// Change Mood Code
+// TODO: paste code here</code></pre></template>
+  <template id="code-sfx-system"><pre><code class="language-csharp">// SFX System Code
+// TODO: paste code here</code></pre></template>
+  <template id="code-vfx-system"><pre><code class="language-csharp">// VFX System Code
+// TODO: paste code here</code></pre></template>
+
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>

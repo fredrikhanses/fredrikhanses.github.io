@@ -1,0 +1,7 @@
+# Local build/dev tools (CV builder, scrapers, dev server); not part of the site
+tools/
+# Python / OS clutter
+__pycache__/
+*.pyc
+Thumbs.db
+desktop.ini

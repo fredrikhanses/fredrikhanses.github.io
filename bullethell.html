@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bullet Hell | Game Project | Fredrik Hanses</title>
+  <meta name="description" content="Retro arcade singleplayer and local cooperative shoot-em-up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <nav class="section-nav" aria-label="On this page">
+    <ul>
+      <li><a href="#top"><span>Top</span></a></li>
+      <li><a href="#gameinfo"><span>Game Info</span></a></li>
+      <li><a href="#highscoresystem"><span>Highscore System</span></a></li>
+      <li><a href="#playercharacters"><span>Player Characters</span></a></li>
+      <li><a href="#enemycharacter"><span>Enemy Character</span></a></li>
+      <li><a href="#controllersupport"><span>Controller Support</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="container" id="top">
+    <section class="game-info" id="gameinfo">
+      <img class="game-poster" src="assets/images/posters/bullethell.png" alt="Bullet Hell">
+
+      <div class="game-summary">
+        <p class="eyebrow">Game Info</p>
+        <h1>Retro Arcade Singleplayer and Local Cooperative Shoot-Em-Up.</h1>
+        <div class="btn-group">
+          <a class="btn btn-solid" href="https://github.com/fredrikhanses/Shoot-Em-Up" target="_blank" rel="noopener">View Project</a>
+        </div>
+      </div>
+
+      <div class="media youtube game-video" data-youtube="f3m-QUFIwG0" data-title="Bullet Hell video"></div>
+
+      <aside class="project-facts">
+        <h4>My Contribution</h4>
+        <ul>
+          <li class="group"><a href="#highscoresystem">Systems</a></li>
+          <li><a href="#highscoresystem">High Score</a></li>
+          <li class="group"><a href="#playercharacters">Gameplay</a></li>
+          <li><a href="#playercharacters">Characters</a></li>
+          <li><a href="#controllersupport">Controller Support</a></li>
+          <li><a href="#enemycharacter">Enemies</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="feature" id="highscoresystem">
+      <header class="feature-head">
+        <p class="eyebrow">Highscore System</p>
+        <h2>High Score System</h2>
+        <p class="tagline">Friendly competition</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><img class="zoomable" src="assets/images/bullethell/highscore.png" alt="High score screen"></figure>
+        <div>
+          <p>When I started working on the high score system it already saved and displayed the best high score. My task was to save it between playthroughs. I then developed the reading and writing systems that saves the high score to a text file. I later adjusted it to accommodate the ability to save the seven best high scores and show up on the credits screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="playercharacters">
+      <header class="feature-head">
+        <p class="eyebrow">Player Characters</p>
+        <h2>Player Characters</h2>
+        <p class="tagline">Destroy in style</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/bullethell/player-characters.mp4" poster="assets/images/bullethell/player-characters.jpg"></video></figure>
+        <div>
+          <p>During the project I worked extensively with the player characters. It was a natural choice because I started with the input system.</p>
+          <div class="btn-group"><button class="btn" data-code="player-character">Player Character Code</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="enemycharacter">
+      <header class="feature-head">
+        <p class="eyebrow">Enemy Character</p>
+        <h2>Enemy Character</h2>
+        <p class="tagline">Exploding boxes, how innovative</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/bullethell/enemy.mp4" poster="assets/images/bullethell/enemy.jpg"></video></figure>
+        <div>
+          <p>I created the box as our first enemy prototype, but it eventually evolved and became our fully functional but only adversary. Over the course of the project I added new effects to the box character.</p>
+          <div class="btn-group"><button class="btn" data-code="enemy-character">Enemy Character Code</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="controllersupport">
+      <header class="feature-head">
+        <p class="eyebrow">Controller Support</p>
+        <h2>Controller Support</h2>
+        <p class="tagline">Fun level increased</p>
+      </header>
+      <div class="feature-item">
+        <figure class="media"><video data-autoplay data-src="assets/video/bullethell/controller.mp4" poster="assets/images/bullethell/controller.jpg"></video></figure>
+        <div>
+          <p>The controller support works seamlessly with the keyboard input so each player can choose what to use.</p>
+          <div class="btn-group"><button class="btn" data-code="input-manager">Input Manager Code</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Code popups: paste code inside each <code> ================= -->
+  <template id="code-player-character"><pre><code class="language-cpp">// Player Character Code
+// TODO: paste code here</code></pre></template>
+  <template id="code-enemy-character"><pre><code class="language-cpp">// Enemy Character Code
+// TODO: paste code here</code></pre></template>
+  <template id="code-input-manager"><pre><code class="language-cpp">// Input Manager Code
+// TODO: paste code here</code></pre></template>
+
+  <div id="site-footer"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>
