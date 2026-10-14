@@ -1,4 +1,3 @@
-
 EventWindow::EventWindow(UIID ID, sf::Font font, CharacterID instigatorID, CharacterID subjectID, UIType type,
 	float goldAmount, std::string buildingName, std::string regionName)
 {

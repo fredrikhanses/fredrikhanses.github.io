@@ -1,4 +1,3 @@
-
 void FamilyTreeWindow::updateInfo()
 {
 	if (m_CurrentCharacterID != INVALID_CHARACTER_ID)
