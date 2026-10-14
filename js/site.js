@@ -272,7 +272,59 @@ function closeModal() {
   document.body.classList.remove("modal-open");
 }
 
+// Syntax highlighting (highlight.js) is only downloaded the first time a code popup opens.
+const HLJS_URL = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js";
+let hljsLoading;
+
+function loadHighlighter() {
+  hljsLoading ??= new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = HLJS_URL;
+    s.onload = () => resolve(window.hljs);
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+  return hljsLoading;
+}
+
+function highlightCode(root) {
+  root.querySelectorAll("pre code").forEach(code => {
+    // Drop blank lines left by pasting the code on a new line after <code>.
+    code.textContent = code.textContent.replace(/^\s*\n/, "").replace(/\s+$/, "");
+    if (!/\blanguage-/.test(code.className)) return;
+    loadHighlighter().then(hljs => hljs.highlightElement(code)).catch(() => {});
+  });
+}
+
+const CODE_LANGUAGES = { cpp: "cpp", h: "cpp", hpp: "cpp", c: "cpp", cs: "csharp" };
+
+function codeBlock(text, language) {
+  const pre = document.createElement("pre");
+  const code = pre.appendChild(document.createElement("code"));
+  if (language) code.className = `language-${language}`;
+  code.textContent = text;
+  return pre;
+}
+
 function initCodePopups() {
+  // <button data-code-src="assets/code/page/name.cpp">Label</button>: code loaded from a file
+  document.querySelectorAll("[data-code-src]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const src = btn.dataset.codeSrc;
+      const language = CODE_LANGUAGES[src.split(".").pop().toLowerCase()];
+      const content = codeBlock("Loading…");
+      openModal({ title: btn.textContent.trim(), content });
+      fetch(src)
+        .then(r => (r.ok ? r.text() : Promise.reject(new Error(r.status))))
+        .then(text => codeBlock(text, language))
+        .catch(() => codeBlock(`// Code not added yet (${src}).`))
+        .then(block => {
+          highlightCode(block);
+          content.replaceWith(block); // no-op if the popup was closed meanwhile
+        });
+    });
+  });
+
   // <button data-code="id">Label</button>  +  <template id="code-id">...</template>
   document.querySelectorAll("[data-code]").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -280,6 +332,7 @@ function initCodePopups() {
       let content;
       if (tpl) {
         content = tpl.content.cloneNode(true);
+        highlightCode(content);
       } else {
         content = document.createElement("pre");
         content.textContent = `// No <template id="code-${btn.dataset.code}"> found on this page.`;

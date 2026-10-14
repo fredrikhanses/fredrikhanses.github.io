@@ -396,8 +396,22 @@ img.missing-asset { color: transparent; }
 .modal-body { overflow: auto; padding: 0; }
 .modal-body pre {
   margin: 0; padding: 20px; font-size: 13px; line-height: 1.55; tab-size: 4;
-  font-family: Consolas, "Cascadia Code", Menlo, monospace; color: #dcdcdc;
+  font-family: Consolas, "Cascadia Code", Menlo, monospace; color: #aab1bf;
+  background: #141414;
 }
+
+/* Code colours (One Dark, as on the old Wix site's gist embeds) */
+.modal-body pre code { filter: saturate(150%); }
+.hljs-keyword, .hljs-type, .hljs-meta, .hljs-meta .hljs-keyword { color: #c578dd; }
+.hljs-title, .hljs-title.function_, .hljs-section { color: #61afef; }
+.hljs-string, .hljs-meta .hljs-string, .hljs-char.escape_ { color: #97c279; }
+.hljs-number, .hljs-literal, .hljs-symbol { color: #d19965; }
+.hljs-title.class_, .hljs-class .hljs-title { color: #e4bf7a; }
+.hljs-built_in, .hljs-regexp { color: #56b5c2; }
+.hljs-variable, .hljs-template-variable, .hljs-attr, .hljs-property, .hljs-tag, .hljs-name { color: #df6b75; }
+.hljs-comment, .hljs-quote { color: #5c6370; font-style: italic; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 700; }
 .modal-body img { max-height: 80vh; margin: auto; }
 .modal.image .modal-dialog { width: auto; max-width: 95vw; background: transparent; border: 0; }
 .modal.image .modal-header { border: 0; position: absolute; right: 0; top: -48px; }
