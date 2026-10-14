@@ -103,8 +103,9 @@ void CharacterWindow::updateInfo()
 
 			MapRegion& mapRegion = map.getRegionById(m_CurrentCharacter->m_OwnedRegionIDs[index]);
 			sf::Text regionNameText;
-			setText(regionNameText, m_Font, m_CharacterSize, m_OwnerColor, 
-				{ regionShape.getPosition().x, regionShape.getPosition().y + m_SpriteSize }, mapRegion.m_RegionName.c_str());
+			setText(regionNameText, m_Font, m_CharacterSize, m_OwnerColor,
+				{ regionShape.getPosition().x, regionShape.getPosition().y + m_SpriteSize },
+				mapRegion.m_RegionName.c_str());
 
 			m_OwnedRegionShapes.push_back(regionShape);
 			m_OwnedRegionsTexts.push_back(regionNameText);
@@ -120,7 +121,8 @@ void CharacterWindow::updateInfo()
 			}
 			else
 			{
-				stream << m_MaleTitles[(unsigned int)m_CurrentCharacter->m_CharacterTitle] << m_CurrentCharacter->m_Name;
+				stream << m_MaleTitles[(unsigned int)m_CurrentCharacter->m_CharacterTitle]
+					<< m_CurrentCharacter->m_Name;
 			}
 		}
 		else
@@ -131,7 +133,8 @@ void CharacterWindow::updateInfo()
 			}
 			else
 			{
-				stream << m_FemaleTitles[(unsigned int)m_CurrentCharacter->m_CharacterTitle] << m_CurrentCharacter->m_Name;
+				stream << m_FemaleTitles[(unsigned int)m_CurrentCharacter->m_CharacterTitle]
+					<< m_CurrentCharacter->m_Name;
 			}
 		}
 		m_CharacterNameText.setString(stream.str());
