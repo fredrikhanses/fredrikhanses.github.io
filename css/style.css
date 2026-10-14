@@ -377,6 +377,7 @@ img.missing-asset { color: transparent; }
 .modal {
   position: fixed; inset: 0; z-index: 100;
   display: grid; place-items: center; padding: 24px;
+  grid-template-columns: minmax(0, 1fr); /* long code lines must not widen the popup past the screen */
   background: rgba(0, 0, 0, .8);
   opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s;
 }
@@ -393,11 +394,12 @@ img.missing-asset { color: transparent; }
   padding: 4px 12px; cursor: pointer; font-size: 14px;
 }
 .modal-close:hover, .modal-copy:hover { border-color: var(--accent); color: var(--accent); }
-.modal-body { overflow: auto; padding: 0; }
+.modal-body { overflow: auto; padding: 0; min-height: 0; }
 .modal-body pre {
   margin: 0; padding: 20px; font-size: 13px; line-height: 1.55; tab-size: 4;
   font-family: Consolas, "Cascadia Code", Menlo, monospace; color: #aab1bf;
   background: #141414;
+  min-width: max-content; /* background follows long lines when scrolling sideways */
 }
 
 /* Code colours (One Dark, as on the old Wix site's gist embeds) */
@@ -470,4 +472,8 @@ body.modal-open { overflow: hidden; }
   .game-info { grid-template-columns: 1fr; grid-template-areas: "poster" "summary" "video" "facts"; }
   .game-poster { max-width: 340px; }
   .gallery.cols-3 { grid-template-columns: 1fr; }
+
+  .modal { padding: 12px; }
+  .modal-header { padding: 10px 14px; }
+  .modal-body pre { padding: 14px; font-size: 12px; }
 }
