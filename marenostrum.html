@@ -69,7 +69,7 @@
         <div>
           <h3>Character Window</h3>
           <p>The most important user interface in the game is the character window. Here the player can get information about all the characters and interact with them.</p>
-          <div class="btn-group"><button class="btn" data-code="character-window">Character Window Code</button></div>
+          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/character-window.cpp">Character Window Code</button></div>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
         <div>
           <h3>Family Tree</h3>
           <p>An algorithm to find a character’s relatives and display them in a manner that represents a family tree.</p>
-          <div class="btn-group"><button class="btn" data-code="family-tree">Family Tree Code</button></div>
+          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/family-tree.cpp">Family Tree Code</button></div>
         </div>
       </div>
 
@@ -87,7 +87,7 @@
         <div>
           <h3>Event Window</h3>
           <p>An event system to notify the player about different things occuring in the game world. Through this, the AI is able to interact with the player.</p>
-          <div class="btn-group"><button class="btn" data-code="event-window">Event Window Code</button></div>
+          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/event-window.cpp">Event Window Code</button></div>
         </div>
       </div>
 
@@ -96,7 +96,7 @@
         <div>
           <h3>Region Window</h3>
           <p>A user interface to display the information of a region. Here you can construct buildings and handle your army as well.</p>
-          <div class="btn-group"><button class="btn" data-code="region-window">Region Window Code</button></div>
+          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/region-window.cpp">Region Window Code</button></div>
         </div>
       </div>
 
@@ -105,7 +105,7 @@
         <div>
           <h3>War Icon &amp; Window</h3>
           <p>User interfaces displaying in depth information regarding current wars.</p>
-          <div class="btn-group"><button class="btn" data-code="war-window">War Icon &amp; Window Code</button></div>
+          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/war-window.cpp">War Icon &amp; Window Code</button></div>
         </div>
       </div>
 
@@ -137,7 +137,7 @@
         <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/realm-name.mp4" poster="assets/images/marenostrum/realm-name.jpg"></video></figure>
         <div>
           <p>An algorithm for displaying realm names over owned regions. They are dynamic and change position, rotation and size when regions swaps owners. Also the names of the realms changes depending of how many regions are controlled. The realm texts also fades in and out based on the level of zoom.</p>
-          <div class="btn-group"><button class="btn" data-code="realm-name">Realm Name Text Code</button></div>
+          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/realm-name.cpp">Realm Name Text Code</button></div>
         </div>
       </div>
     </section>
@@ -196,239 +196,14 @@
           <p>Together we made a A* pathfinding algorithm that the units uses to traverse our map. I also made a function that displayed the player unit's current path represented as a line.</p>
           <p>I thought it was hard to assess a unit’s strength while playing. Therefore I added small box that displayed the character’s color and the unit’s current strength.</p>
           <div class="btn-group">
-            <button class="btn" data-code="army-ui">Army UI Code</button>
-            <button class="btn" data-code="army-pathfinding">Army Pathfinding Code</button>
-            <button class="btn" data-code="army-movement">Army Movement Code</button>
+            <button class="btn" data-code-src="assets/code/marenostrum/army-ui.cpp">Army UI Code</button>
+            <button class="btn" data-code-src="assets/code/marenostrum/army-pathfinding.cpp">Army Pathfinding Code</button>
+            <button class="btn" data-code-src="assets/code/marenostrum/army-movement.cpp">Army Movement Code</button>
           </div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- ================= Code popups: paste code inside each <code> ================= -->
-  <template id="code-character-window"><pre><code class="language-cpp">
-void CharacterWindow::clickOnMap()
-{
-	if (InputHandler::getRightMouseClicked() && !InputHandler::getPlayerUnitSelected())
-	{
-		Vector2D mousePosition = InputHandler::getUIMousePosition();
-		if (!m_WindowShape.getGlobalBounds().contains(mousePosition.x, mousePosition.y))
-		{
-			InputHandler::setRightMouseClicked(false);
-			Vector2DInt mouseMapPosition = InputHandler::getMouseMapPosition();
-			Map& map = Map::get();
-			if (map.mapSquareDataContainsKey(mouseMapPosition))
-			{
-				size_t regionID = 0;
-				for (auto& squareData : map.m_MapSquareData)
-				{
-					if (squareData.m_Position == mouseMapPosition)
-					{
-						regionID = squareData.m_RegionID;
-					}
-				}
-				m_CurrentRegionID = regionID;
-				m_CurrentCharacterID = map.getRegionById(m_CurrentRegionID).m_OwnerID;
-				checkIfPlayerCharacter();
-				updateInfo();
-				m_Open = true;
-			}
-			else
-			{
-				closeWindow();
-			}
-		}
-		else
-		{
-			m_Open = false;
-		}
-	}
-	else if (InputHandler::getLeftMouseClicked() && !InputHandler::getPlayerUnitSelected() && m_Visible)
-	{
-		Vector2D mousePosition = InputHandler::getUIMousePosition();
-		if (!m_WindowShape.getGlobalBounds().contains(mousePosition.x, mousePosition.y))
-		{
-			InputHandler::setLeftMouseClicked(false);
-			closeWindow();
-		}
-	}
-}
-
-void CharacterWindow::updateInfo()
-{
-	if (m_CurrentCharacterID != INVALID_CHARACTER_ID)
-	{
-		CharacterManager& characterManager = CharacterManager::get();
-		m_PlayerCharacter = &characterManager.getPlayerCharacter();
-		m_CurrentCharacter = &characterManager.getCharacter(m_CurrentCharacterID);
-		m_FatherID = m_CurrentCharacter->m_Father;
-		m_MotherID = m_CurrentCharacter->m_Mother;
-		m_Dead = m_CurrentCharacter->m_Dead;
-		m_Gender = m_CurrentCharacter->m_Gender;
-
-		if (m_CurrentCharacter->m_CharacterTitle != Title::Unlanded)
-		{
-			m_OwnerColor = m_CurrentCharacter->m_RegionColor;
-			m_RealmNameText.setString(m_CurrentCharacter->m_KingdomName);
-			m_RealmNameText.setFillColor(m_OwnerColor);
-		}
-		else if (m_FatherID != INVALID_CHARACTER_ID)
-		{
-			Character& father = characterManager.getCharacter(m_FatherID);
-			m_OwnerColor = father.m_RegionColor;
-			m_RealmNameText.setString(father.m_KingdomName);
-			m_RealmNameText.setFillColor(m_OwnerColor);
-		}
-		else
-		{
-			m_RealmNameText.setString(m_EmptyString);
-			m_OwnerColor = m_CurrentCharacter->m_RegionColor;
-		}
-
-		m_WindowShape.setOutlineColor(m_OwnerColor);
-		m_FamilyTreeText.setFillColor(m_OwnerColor);
-
-		for (sf::Text& text : m_DiplomacyTexts)
-		{
-			text.setFillColor(m_OwnerColor);
-		}
-
-		clearInfo();
-		updateParents();
-		updateTraits();
-		updateChildren();
-		updateAllies();
-		updateWars();
-		updateTruces();
-
-		Map& map = Map::get();
-		unsigned int ownedRegionSize = m_CurrentCharacter->m_OwnedRegionIDs.size();
-		for (unsigned int index = 0; index < ownedRegionSize; index++)
-		{
-			sf::RectangleShape regionShape;
-			setShape(regionShape, m_TransparentColor, m_TransparentColor, 0.0f, { m_SpriteSize, m_SpriteSize }, { m_SizeX * 0.1f, m_SpriteSize * index + m_OutlineThickness * 1.5f * index + m_SpriteSize * 12.0f });
-
-			MapRegion& mapRegion = map.getRegionById(m_CurrentCharacter->m_OwnedRegionIDs[index]);
-			sf::Text regionNameText;
-			setText(regionNameText, m_Font, m_CharacterSize, m_OwnerColor, { regionShape.getPosition().x, regionShape.getPosition().y + m_SpriteSize }, mapRegion.m_RegionName.c_str());
-
-			m_OwnedRegionShapes.push_back(regionShape);
-			m_OwnedRegionsTexts.push_back(regionNameText);
-			m_OwnedRegionShields.push_back(&mapRegion.m_HeraldicShield);
-		}
-
-		std::stringstream stream;
-		if (m_Gender == Gender::Male)
-		{
-			if (m_CurrentCharacter->m_CharacterTitle >= Title::Unlanded)
-			{
-				stream << m_CurrentCharacter->m_Name;
-			}
-			else
-			{
-				stream << m_MaleTitles[(unsigned int)m_CurrentCharacter->m_CharacterTitle] << m_CurrentCharacter->m_Name;
-			}
-		}
-		else
-		{
-			if (m_CurrentCharacter->m_CharacterTitle >= Title::Unlanded)
-			{
-				stream << m_CurrentCharacter->m_Name;
-			}
-			else
-			{
-				stream << m_FemaleTitles[(unsigned int)m_CurrentCharacter->m_CharacterTitle] << m_CurrentCharacter->m_Name;
-			}
-		}
-		m_CharacterNameText.setString(stream.str());
-		m_CharacterNameText.setFillColor(m_OwnerColor);
-		stream.str(std::string());
-		stream.clear();
-
-		if (m_CurrentCharacterID != m_PreviousCharacterID)
-		{
-			m_PreviousCharacterID = m_CurrentCharacterID;
-			const char* portraitPath = m_CurrentCharacter->m_PortraitPath.c_str();
-			bool textureLoaded = false;
-			while (!textureLoaded)
-			{
-				m_CurrentCharacterTexture = AssetHandler::get().getTextureAtPath(portraitPath);
-				if (m_CurrentCharacterTexture.getSize().x != 0)
-				{
-					textureLoaded = true;
-				}
-			}
-			setSprite(m_CharacterSprite, m_CurrentCharacterTexture, { m_SizeX * 0.1f, m_SpriteSize }, m_SpriteSize * 2);
-		}
-
-		Unit& unit = UnitManager::get().getUnitOfCharacter(m_CurrentCharacterID);
-		stream << unit.m_RepresentedForce << m_Dash << m_CurrentCharacter->m_MaxArmySize;
-		m_ArmyText.setString(stream.str());
-		m_ArmyText.setFillColor(m_OwnerColor);
-		stream.str(std::string());
-		stream.clear();
-
-		stream << std::fixed << std::setprecision(1) << m_CurrentCharacter->m_CurrentGold;
-		m_GoldText.setString(stream.str());
-		m_GoldText.setFillColor(m_OwnerColor);
-		stream.str(std::string());
-		stream.clear();
-
-		if (!m_Dead)
-		{
-			stream << Time::m_GameDate.getAge(m_CurrentCharacter->m_Birthday);
-		}
-		else
-		{
-			stream << m_CurrentCharacter->m_AgeAtDeath;
-		}
-		m_CharacterAgeText.setString(stream.str());
-		m_CharacterAgeText.setFillColor(m_OwnerColor);
-		stream.str(std::string());
-		stream.clear();
-
-		if (m_CurrentCharacter->m_Dead)
-		{
-			if (m_Gender == Gender::Male)
-			{
-				setSprite(m_BirthSprite, m_MaleChildTexture, m_BirthPosition);
-			}
-			else
-			{
-				setSprite(m_BirthSprite, m_FemaleChildTexture, m_BirthPosition);
-			}
-
-			stream << Time::m_GameDate.getDateString(m_CurrentCharacter->m_Birthday);
-			m_Birthday.setString(stream.str());
-			m_Birthday.setFillColor(m_OwnerColor);
-			stream.str(std::string());
-			stream.clear();
-
-			stream << Time::m_GameDate.getDateString(m_CurrentCharacter->m_DeathDate);
-			m_DeathDate.setString(stream.str());
-			m_DeathDate.setFillColor(m_OwnerColor);
-			stream.str(std::string());
-			stream.clear();
-		}
-	}
-}
-</code></pre></template>
-  <template id="code-family-tree"><pre><code class="language-cpp">// Family Tree Code
-// TODO: paste code here</code></pre></template>
-  <template id="code-event-window"><pre><code class="language-cpp">// Event Window Code
-// TODO: paste code here</code></pre></template>
-  <template id="code-region-window"><pre><code class="language-cpp">// Region Window Code
-// TODO: paste code here</code></pre></template>
-  <template id="code-war-window"><pre><code class="language-cpp">// War Icon &amp; Window Code
-// TODO: paste code here</code></pre></template>
-  <template id="code-realm-name"><pre><code class="language-cpp">// Realm Name Text Code
-// TODO: paste code here</code></pre></template>
-  <template id="code-army-ui"><pre><code class="language-cpp">// Army UI Code
-// TODO: paste code here</code></pre></template>
-  <template id="code-army-pathfinding"><pre><code class="language-cpp">// Army Pathfinding Code
-// TODO: paste code here</code></pre></template>
-  <template id="code-army-movement"><pre><code class="language-cpp">// Army Movement Code
-// TODO: paste code here</code></pre></template>
 
   <div id="site-footer"></div>
   <script src="js/site.js"></script>
