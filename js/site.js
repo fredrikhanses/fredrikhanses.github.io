@@ -247,12 +247,35 @@ function buildModal() {
   modal.querySelector(".modal-copy").addEventListener("click", e => {
     const code = modal.querySelector("pre");
     if (!code) return;
-    navigator.clipboard?.writeText(code.innerText).then(() => {
-      e.target.textContent = "Copied!";
+    const done = label => {
+      e.target.textContent = label;
       setTimeout(() => (e.target.textContent = "Copy"), 1500);
-    });
+    };
+    copyText(code.textContent).then(() => done("Copied!"), () => done("Copy failed"));
   });
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+}
+
+// The Clipboard API only exists on https:// and localhost, so pages opened over the
+// local network (http://192.168...) fall back to the older select-and-copy approach.
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
+  }
+  return legacyCopy(text);
+}
+
+function legacyCopy(text) {
+  const area = document.createElement("textarea");
+  area.value = text;
+  area.setAttribute("readonly", "");
+  area.style.cssText = "position:fixed;top:0;left:0;opacity:0;font-size:16px";
+  modal.appendChild(area);
+  area.select();
+  area.setSelectionRange(0, text.length);
+  const ok = document.execCommand("copy");
+  area.remove();
+  return ok ? Promise.resolve() : Promise.reject(new Error("copy failed"));
 }
 
 function openModal({ title, content, kind = "code" }) {
