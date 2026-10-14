@@ -413,6 +413,8 @@ img.missing-asset { color: transparent; }
 .hljs-emphasis { font-style: italic; }
 .hljs-strong { font-weight: 700; }
 .modal-body img { max-height: 80vh; margin: auto; }
+.modal.blueprint .modal-dialog { width: min(1400px, 100%); }
+.modal-body iframe.blueprint { display: block; width: 100%; height: 75vh; border: 0; }
 .modal.image .modal-dialog { width: auto; max-width: 95vw; background: transparent; border: 0; }
 .modal.image .modal-header { border: 0; position: absolute; right: 0; top: -48px; }
 .modal.image .modal-header h2 { display: none; }

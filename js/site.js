@@ -325,6 +325,24 @@ function initCodePopups() {
     });
   });
 
+  // <button data-blueprint="https://blueprintue.com/render/...">Label</button>: Unreal blueprint from blueprintUE
+  document.querySelectorAll("[data-blueprint]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const src = btn.dataset.blueprint;
+      let content;
+      if (src) {
+        content = document.createElement("iframe");
+        content.className = "blueprint";
+        content.src = src;
+        content.title = btn.textContent.trim();
+        content.allowFullscreen = true;
+      } else {
+        content = codeBlock("// Blueprint not added yet.");
+      }
+      openModal({ title: btn.textContent.trim(), content, kind: "blueprint" });
+    });
+  });
+
   // <button data-code="id">Label</button>  +  <template id="code-id">...</template>
   document.querySelectorAll("[data-code]").forEach(btn => {
     btn.addEventListener("click", () => {
