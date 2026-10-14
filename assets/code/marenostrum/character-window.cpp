@@ -97,11 +97,14 @@ void CharacterWindow::updateInfo()
 		for (unsigned int index = 0; index < ownedRegionSize; index++)
 		{
 			sf::RectangleShape regionShape;
-			setShape(regionShape, m_TransparentColor, m_TransparentColor, 0.0f, { m_SpriteSize, m_SpriteSize }, { m_SizeX * 0.1f, m_SpriteSize * index + m_OutlineThickness * 1.5f * index + m_SpriteSize * 12.0f });
+			setShape(regionShape, m_TransparentColor, m_TransparentColor, 0.0f, 
+				{ m_SpriteSize, m_SpriteSize }, 
+				{ m_SizeX * 0.1f, m_SpriteSize * index + m_OutlineThickness * 1.5f * index + m_SpriteSize * 12.0f });
 
 			MapRegion& mapRegion = map.getRegionById(m_CurrentCharacter->m_OwnedRegionIDs[index]);
 			sf::Text regionNameText;
-			setText(regionNameText, m_Font, m_CharacterSize, m_OwnerColor, { regionShape.getPosition().x, regionShape.getPosition().y + m_SpriteSize }, mapRegion.m_RegionName.c_str());
+			setText(regionNameText, m_Font, m_CharacterSize, m_OwnerColor, 
+				{ regionShape.getPosition().x, regionShape.getPosition().y + m_SpriteSize }, mapRegion.m_RegionName.c_str());
 
 			m_OwnedRegionShapes.push_back(regionShape);
 			m_OwnedRegionsTexts.push_back(regionNameText);
