@@ -208,8 +208,15 @@ function initYouTube() {
     if (!id) return markMissing(el, "YouTube video ID (data-youtube)");
     const watchUrl = `https://www.youtube.com/watch?v=${id}`;
     el.innerHTML = `
-      <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${title}" loading="lazy">
+      <img src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt="${title}" loading="lazy">
       <button class="youtube-play" aria-label="Play ${title}"></button>`;
+    // Not every video has a 1280x720 thumbnail; YouTube then answers with a 120x90
+    // placeholder, so step down to 640x480 and finally the 480x360 one that always exists.
+    const thumb = el.querySelector("img");
+    const fallbacks = ["sddefault", "hqdefault"];
+    const nextThumb = () => { if (fallbacks.length) thumb.src = `https://i.ytimg.com/vi/${id}/${fallbacks.shift()}.jpg`; };
+    thumb.addEventListener("error", nextThumb);
+    thumb.addEventListener("load", () => { if (thumb.naturalWidth <= 120) nextThumb(); });
     el.querySelector("button").addEventListener("click", () => {
       if (location.protocol === "file:") {
         window.open(watchUrl, "_blank", "noopener");
