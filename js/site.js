@@ -348,17 +348,21 @@ function initCodePopups() {
     });
   });
 
-  // <button data-blueprint="https://blueprintue.com/render/...">Label</button>: Unreal blueprint from blueprintUE
+  // <button data-blueprint="https://blueprintue.com/render/...">Label</button>: Unreal blueprint from blueprintUE.
+  // Several space-separated URLs are shown stacked in the same popup.
   document.querySelectorAll("[data-blueprint]").forEach(btn => {
     btn.addEventListener("click", () => {
-      const src = btn.dataset.blueprint;
+      const sources = btn.dataset.blueprint.trim().split(/\s+/).filter(Boolean);
       let content;
-      if (src) {
-        content = document.createElement("iframe");
-        content.className = "blueprint";
-        content.src = src;
-        content.title = btn.textContent.trim();
-        content.allowFullscreen = true;
+      if (sources.length) {
+        content = document.createDocumentFragment();
+        sources.forEach((src, i) => {
+          const frame = content.appendChild(document.createElement("iframe"));
+          frame.className = sources.length > 1 ? "blueprint stacked" : "blueprint";
+          frame.src = src;
+          frame.title = sources.length > 1 ? `${btn.textContent.trim()} ${i + 1}` : btn.textContent.trim();
+          frame.allowFullscreen = true;
+        });
       } else {
         content = codeBlock("// Blueprint not added yet.");
       }
