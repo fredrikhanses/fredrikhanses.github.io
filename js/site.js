@@ -383,6 +383,28 @@ function initCodePopups() {
   });
 }
 
+function initContributionColumns() {
+  // On phones the contribution list is shown in two columns (see CSS). Each item gets a
+  // data-col: split between sub headers when there are several, otherwise by item count.
+  document.querySelectorAll(".project-facts ul").forEach(list => {
+    const items = [...list.children];
+    const groupStarts = items.map((li, i) => (li.classList.contains("group") ? i : -1)).filter(i => i > 0);
+    let split;
+    if (groupStarts.length) {
+      // Pick the sub header that divides the list most evenly.
+      split = groupStarts.reduce((best, i) =>
+        Math.abs(items.length - 2 * i) < Math.abs(items.length - 2 * best) ? i : best);
+    } else {
+      // A single group: its header spans both columns and the items are halved.
+      const header = items[0]?.classList.contains("group") ? 1 : 0;
+      if (header) items[0].dataset.col = "all";
+      split = header + Math.ceil((items.length - header) / 2);
+    }
+    items.forEach((li, i) => { li.dataset.col ??= i < split ? "1" : "2"; });
+    list.classList.add("split-cols");
+  });
+}
+
 function initLightbox() {
   document.querySelectorAll(".gallery img, img.zoomable").forEach(img => {
     img.addEventListener("click", () => {
@@ -436,5 +458,6 @@ initVideos();
 initYouTube();
 initCodePopups();
 initLightbox();
+initContributionColumns();
 initScrollSpy();
 initBackToTop();
