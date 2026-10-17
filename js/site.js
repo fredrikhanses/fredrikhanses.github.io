@@ -1,129 +1,120 @@
 /* ==========================================================================
    Shared layout + behaviour for every page.
    Pages only need:  <div id="site-header"></div> ... <div id="site-footer"></div>
+   Project pages also get a previous/next pager from <div id="project-pager"></div>.
    ========================================================================== */
 
 const SITE = {
   name: "Fredrik Hanses",
   title: "Game Programmer",
-  location: "Stockholm",
+  location: "Stockholm, Sweden",
   email: "fredrik.hanses@gmail.com",
-  phone: "+46762756925",
-  phoneDisplay: "+46 76 275 69 25",
   linkedin: "https://www.linkedin.com/in/fredrikhanses/",
   github: "https://github.com/fredrikhanses",
   cv: "assets/cv.pdf",
 };
 
-// Projects grouped by studio/school, in the order shown in the "Game Projects" dropdown.
-const PROJECT_GROUPS = [
-  {
-    name: "Resolution Games",
-    projects: [
-      { slug: "battlemarked", name: "Demeo x Dungeons & Dragons: Battlemarked" },
-      { slug: "demeo",        name: "Demeo" },
-      { slug: "demeobattles", name: "Demeo Battles" },
-      { slug: "grimkeep",     name: "GrimKeep" },
-    ],
-  },
-  {
-    name: "Futuregames",
-    projects: [
-      { slug: "marenostrum",   name: "Mare Nostrum" },
-      { slug: "alter",         name: "Alter" },
-      { slug: "arrowhood",     name: "Arrowhood" },
-      { slug: "seventhcircle", name: "Seventh Circle" },
-      { slug: "projectbrawl",  name: "Project Brawl" },
-      { slug: "bullethell",    name: "Bullet Hell" },
-    ],
-  },
-  {
-    name: "KTH",
-    projects: [
-      { slug: "sumodash", name: "Sumo Dash" },
-    ],
-  },
+// Project pages in the order the front page lists them; the pager follows this order.
+const PROJECTS = [
+  { slug: "battlemarked",  name: "Battlemarked" },
+  { slug: "demeo",         name: "Demeo" },
+  { slug: "demeobattles",  name: "Demeo Battles" },
+  { slug: "grimkeep",      name: "GrimKeep" },
+  { slug: "marenostrum",   name: "Mare Nostrum" },
+  { slug: "bullethell",    name: "Bullet Hell" },
+  { slug: "alter",         name: "Alter" },
+  { slug: "projectbrawl",  name: "Project Brawl" },
+  { slug: "arrowhood",     name: "Arrowhood" },
+  { slug: "seventhcircle", name: "Seventh Circle" },
+  { slug: "sumodash",      name: "Sumo Dash" },
 ];
-const PROJECTS = PROJECT_GROUPS.flatMap(g => g.projects);
 
 const ICONS = {
-  linkedin: '<svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></svg>',
-  github: '<svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>',
-  mail: '<svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.4l8 5.1 8-5.1V7zm16 2.75-8 5.1-8-5.1V17h16z"/></svg>',
-  phone: '<svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>',
+  arrowLeft: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>',
   soundOn: '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>',
   soundOff: '<svg viewBox="0 0 24 24"><path d="M16.5 12A4.5 4.5 0 0 0 14 8v2.2l2.45 2.45c.03-.2.05-.42.05-.65zM19 12a7 7 0 0 1-.55 2.7l1.5 1.5A8.9 8.9 0 0 0 21 12a9 9 0 0 0-7-8.8v2.1A7 7 0 0 1 19 12zM4.3 3 3 4.3 7.7 9H3v6h4l5 5v-6.7l4.25 4.25A7 7 0 0 1 14 18.7v2.1a9 9 0 0 0 3.7-1.8l2 2L21 19.7l-9-9zM12 4 9.9 6.1 12 8.2z"/></svg>',
 };
 
 const currentPage = location.pathname.split("/").pop().replace(".html", "") || "index";
+const isHome = currentPage === "index";
 
-/* ---------- Header / footer ---------- */
+/* ---------- Header / footer / pager ---------- */
+
+function brand(href) {
+  return `<a class="brand" href="${href}"><span class="brand-mark">FH</span><span class="brand-name">${SITE.name}</span></a>`;
+}
 
 function renderHeader() {
   const el = document.getElementById("site-header");
   if (!el) return;
-  const isProject = PROJECTS.some(p => p.slug === currentPage) || currentPage === "game-projects";
-  el.outerHTML = `
+  el.outerHTML = isHome ? `
   <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <img class="brand-avatar" src="assets/images/avatar.jpg" alt="${SITE.name}">
-        <div>
-          <div class="brand-name">${SITE.name}</div>
-          <div class="brand-sub"><span>${SITE.title}</span><span>${SITE.location}</span></div>
-        </div>
-      </a>
-      <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span></button>
-      <nav class="main-nav" aria-label="Main">
-        <ul>
-          <li class="has-dropdown">
-            <a href="game-projects.html" class="nav-toggle ${isProject ? "active" : ""}" aria-haspopup="true">Game Projects</a>
-            <ul class="dropdown">
-              ${PROJECT_GROUPS.map(g => `
-                <li class="dropdown-heading">${g.name}</li>
-                ${g.projects.map(p => `<li><a href="${p.slug}.html" class="${p.slug === currentPage ? "active" : ""}">${p.name}</a></li>`).join("")}
-              `).join("")}
-            </ul>
-          </li>
-          <li><a href="about.html" class="${currentPage === "about" ? "active" : ""}">About me</a></li>
-          <li><a href="${SITE.cv}" target="_blank" rel="noopener">CV</a></li>
-        </ul>
+    <div class="wrap">
+      ${brand("#top")}
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#education">Education</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cv" href="${SITE.cv}" target="_blank" rel="noopener">Download CV</a>
       </nav>
-      ${socialLinks()}
+    </div>
+  </header>` : `
+  <header class="site-header">
+    <div class="wrap">
+      <a class="back-link" href="index.html#work">${ICONS.arrowLeft}All work</a>
+      ${brand("index.html")}
     </div>
   </header>`;
-}
-
-function socialLinks() {
-  return `
-  <div class="social">
-    <a href="${SITE.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">${ICONS.linkedin}</a>
-    <a href="${SITE.github}" target="_blank" rel="noopener" aria-label="GitHub">${ICONS.github}</a>
-    <a href="mailto:${SITE.email}?subject=Interesting%20Portfolio" aria-label="Email">${ICONS.mail}</a>
-    <a href="tel:${SITE.phone}" aria-label="Phone">${ICONS.phone}</a>
-  </div>`;
 }
 
 function renderFooter() {
   const el = document.getElementById("site-footer");
   if (!el) return;
-  el.outerHTML = `
-  <footer class="site-footer">
-    <a href="${SITE.linkedin}" target="_blank" rel="noopener">&copy;${new Date().getFullYear()} ${SITE.name}</a>
+  const bar = `
+      <div class="footer-bar">
+        <span>${SITE.name} · ${SITE.title} · ${SITE.location}</span>
+        <nav aria-label="Contact">
+          <a href="mailto:${SITE.email}">${SITE.email}</a>
+          <a href="${SITE.github}" target="_blank" rel="noopener">GitHub</a>
+          <a href="${SITE.linkedin}" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+      </div>`;
+  el.outerHTML = isHome ? `
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-cta">
+        <h2>Let's make something <span class="accent">playable.</span></h2>
+        <div class="btn-group">
+          <a class="btn btn-solid btn-lg" href="mailto:${SITE.email}">Email me</a>
+          <a class="btn btn-lg" href="${SITE.cv}" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>${bar}
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>` : `
+  <footer class="site-footer compact">
+    <div class="wrap">${bar}
+    </div>
   </footer>
   <button class="back-to-top" aria-label="Back to top">&uarr;</button>`;
 }
 
-function initNav() {
-  const header = document.querySelector(".site-header");
-  if (!header) return;
-  const menuBtn = header.querySelector(".menu-button");
-  menuBtn.addEventListener("click", () => {
-    const open = header.classList.toggle("nav-open");
-    menuBtn.setAttribute("aria-expanded", open);
-    document.body.classList.toggle("modal-open", open);
-  });
-  // The "Game Projects" dropdown opens on hover/focus (CSS); clicking the label opens game-projects.html.
+function renderPager() {
+  const el = document.getElementById("project-pager");
+  if (!el) return;
+  const i = PROJECTS.findIndex(p => p.slug === currentPage);
+  const prev = PROJECTS[i - 1];
+  const next = PROJECTS[i + 1];
+  const link = (p, cls, label, text) => `
+        <a class="${cls}" href="${p ? `${p.slug}.html` : "index.html#work"}">
+          <small>${label}</small><strong>${text}</strong>
+        </a>`;
+  el.outerHTML = `
+  <nav class="pager wrap" aria-label="More projects">
+    <div class="pager-grid">${link(prev, "prev", prev ? "Previous project" : "Previous", `← ${prev ? prev.name : "All work"}`)}${link(next, "next", next ? "Next project" : "Next", `${next ? next.name : "All work"} →`)}
+    </div>
+  </nav>`;
 }
 
 /* ---------- Missing asset placeholders ---------- */
@@ -394,28 +385,6 @@ function initCodePopups() {
   });
 }
 
-function initContributionColumns() {
-  // On phones the contribution list is shown in two columns (see CSS). Each item gets a
-  // data-col: split between sub headers when there are several, otherwise by item count.
-  document.querySelectorAll(".project-facts ul").forEach(list => {
-    const items = [...list.children];
-    const groupStarts = items.map((li, i) => (li.classList.contains("group") ? i : -1)).filter(i => i > 0);
-    let split;
-    if (groupStarts.length) {
-      // Pick the sub header that divides the list most evenly.
-      split = groupStarts.reduce((best, i) =>
-        Math.abs(items.length - 2 * i) < Math.abs(items.length - 2 * best) ? i : best);
-    } else {
-      // A single group: its header spans both columns and the items are halved.
-      const header = items[0]?.classList.contains("group") ? 1 : 0;
-      if (header) items[0].dataset.col = "all";
-      split = header + Math.ceil((items.length - header) / 2);
-    }
-    items.forEach((li, i) => { li.dataset.col ??= i < split ? "1" : "2"; });
-    list.classList.add("split-cols");
-  });
-}
-
 function initLightbox() {
   document.querySelectorAll(".gallery img, img.zoomable").forEach(img => {
     img.addEventListener("click", () => {
@@ -428,10 +397,10 @@ function initLightbox() {
   });
 }
 
-/* ---------- Section nav scroll-spy ---------- */
+/* ---------- Contributions nav scroll-spy ---------- */
 
 function initScrollSpy() {
-  const links = [...document.querySelectorAll(".section-nav a")];
+  const links = [...document.querySelectorAll(".contrib-nav a")];
   if (!links.length) return;
   const targets = links
     .map(a => document.getElementById(a.hash.slice(1)))
@@ -439,10 +408,10 @@ function initScrollSpy() {
 
   const update = () => {
     const y = window.scrollY + window.innerHeight * 0.35;
-    let current = targets[0];
-    for (const t of targets) if (t.offsetTop <= y) current = t;
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = targets[targets.length - 1];
-    links.forEach(a => a.classList.toggle("active", a.hash === `#${current.id}`));
+    let current = null;
+    for (const t of targets) if (t.getBoundingClientRect().top + window.scrollY <= y) current = t;
+    if (current && window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = targets[targets.length - 1];
+    links.forEach(a => a.classList.toggle("active", !!current && a.hash === `#${current.id}`));
   };
   window.addEventListener("scroll", update, { passive: true });
   update();
@@ -463,12 +432,11 @@ function initBackToTop() {
 
 renderHeader();
 renderFooter();
-initNav();
+renderPager();
 initAssetFallbacks();
 initVideos();
 initYouTube();
 initCodePopups();
 initLightbox();
-initContributionColumns();
 initScrollSpy();
 initBackToTop();

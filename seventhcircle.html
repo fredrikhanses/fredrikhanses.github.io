@@ -7,93 +7,89 @@
   <meta name="description" content="First-person singleplayer puzzle solver.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="site-header"></div>
 
-  <nav class="section-nav" aria-label="On this page">
-    <ul>
-      <li><a href="#top"><span>Top</span></a></li>
-      <li><a href="#gameinfo"><span>Game Info</span></a></li>
-      <li><a href="#artificialintelligence"><span>Artificial Intelligence</span></a></li>
-      <li><a href="#menuinterface"><span>Menu Interface</span></a></li>
-      <li><a href="#visualflair"><span>Visual Flair</span></a></li>
-    </ul>
-  </nav>
-
-  <main class="container" id="top">
-    <section class="game-info" id="gameinfo">
-      <img class="game-poster" src="assets/images/posters/seventhcircle.png" alt="Seventh Circle">
-
-      <div class="game-summary">
-        <p class="eyebrow">Game Info</p>
-        <h1>In this first-person puzzle solver you play as Lars, stuck in his personal hell. Forced to relive his worst nightmare, until his scattered memories are collected.</h1>
-        <div class="btn-group">
-          <a class="btn btn-solid" href="https://github.com/FGTeam4/Purgatory" target="_blank" rel="noopener">View Project</a>
-          <a class="btn btn-solid" href="https://fredrikhanses.itch.io/seventh-circle" target="_blank" rel="noopener">Download Game</a>
-        </div>
+  <main>
+    <section class="case-hero wrap">
+      <p class="eyebrow">Futuregames · Game project</p>
+      <h1>Seventh Circle</h1>
+      <div class="case-lead">
+        <p>In this first-person puzzle solver you play as Lars, stuck in his personal hell. Forced to relive his worst nightmare, until his scattered memories are collected.</p>
       </div>
-
-      <div class="media youtube game-video" data-youtube="cV9FtoNOIH0" data-title="Seventh Circle video"></div>
-
-      <aside class="project-facts">
-        <h4>My Contribution</h4>
-        <ul>
-          <li class="group"><a href="#artificialintelligence">Systems</a></li>
-          <li><a href="#visualflair">Visual Flair</a></li>
-          <li><a href="#menuinterface">Menu Interface</a></li>
-          <li><a href="#artificialintelligence">Artificial Intelligence</a></li>
-          <li class="group"><a href="#menuinterface">User Interface</a></li>
-        </ul>
-      </aside>
+      <div class="btn-group">
+        <a class="btn btn-solid" href="https://github.com/FGTeam4/Purgatory" target="_blank" rel="noopener">View Project</a>
+        <a class="btn" href="https://fredrikhanses.itch.io/seventh-circle" target="_blank" rel="noopener">Download Game</a>
+      </div>
+      <dl class="facts ruled-grid">
+        <div><dt>Engine</dt><dd>Unreal Engine</dd></div>
+        <div><dt>Team</dt><dd>9 developers</dd></div>
+        <div><dt>Length</dt><dd>4 weeks</dd></div>
+        <div><dt>Year</dt><dd>2020</dd></div>
+      </dl>
     </section>
 
-    <section class="feature" id="artificialintelligence">
-      <header class="feature-head">
-        <p class="eyebrow">Artificial Intelligence</p>
-        <h2>Artificial Intelligence</h2>
-        <p class="tagline">Following Wall</p>
-      </header>
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/seventhcircle/following-wall.mp4" poster="assets/images/seventhcircle/following-wall.jpg"></video></figure>
-        <div>
-          <p>We wanted to force the player to always move forward into the portals. The intimidating wall of smoke that is following the player sought to do just that.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/seventhcircle/following-wall.cpp">Following Wall Code</button></div>
-        </div>
+    <section class="case-video wrap">
+      <div class="media youtube" data-youtube="cV9FtoNOIH0" data-title="Seventh Circle video"></div>
+    </section>
+
+    <section class="contrib wrap">
+      <nav class="contrib-nav" aria-label="Contributions">
+        <p class="eyebrow">My contributions</p>
+        <a href="#artificialintelligence"><span>01</span>Artificial Intelligence</a>
+        <a href="#menuinterface"><span>02</span>Menu Interface</a>
+        <a href="#visualflair"><span>03</span>Visual Flair</a>
+      </nav>
+      <div class="contrib-list">
+      <section class="feature" id="artificialintelligence">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Artificial Intelligence</h2>
+          <p class="tagline">Following Wall</p>
+        </header>
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/seventhcircle/following-wall.mp4" poster="assets/images/seventhcircle/following-wall.jpg"></video></figure>
+            <div>
+              <p>We wanted to force the player to always move forward into the portals. The intimidating wall of smoke that is following the player sought to do just that.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/seventhcircle/following-wall.cpp">Following Wall Code</button></div>
+            </div>
+          </div>
+      </section>
+      <section class="feature" id="menuinterface">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Menu Interface</h2>
+          <p class="tagline">Give the user options</p>
+        </header>
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/seventhcircle/menu.mp4" poster="assets/images/seventhcircle/menu.jpg"></video></figure>
+            <div>
+              <p>The main menu has different options you can adjust. You can also access it mid game.</p>
+              <div class="btn-group"><button class="btn" data-blueprint="https://blueprintue.com/render/f-g5_9z/">Menu Blueprint</button></div>
+            </div>
+          </div>
+      </section>
+      <section class="feature" id="visualflair">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Visual Flair</h2>
+          <p class="tagline">Extra detail</p>
+        </header>
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/seventhcircle/floating-objects.mp4" poster="assets/images/seventhcircle/floating-objects.jpg"></video></figure>
+            <div>
+              <p>I made a system for making objects float because we felt that the void surrounding the level was a bit too empty.</p>
+              <div class="btn-group"><button class="btn" data-blueprint="https://blueprintue.com/render/ek_9lgh6">Floating Objects Blueprint</button></div>
+            </div>
+          </div>
+      </section>
       </div>
     </section>
 
-    <section class="feature" id="menuinterface">
-      <header class="feature-head">
-        <p class="eyebrow">Menu Interface</p>
-        <h2>Menu Interface</h2>
-        <p class="tagline">Give the user options</p>
-      </header>
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/seventhcircle/menu.mp4" poster="assets/images/seventhcircle/menu.jpg"></video></figure>
-        <div>
-          <p>The main menu has different options you can adjust. You can also access it mid game.</p>
-          <div class="btn-group"><button class="btn" data-blueprint="https://blueprintue.com/render/f-g5_9z/">Menu Blueprint</button></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="feature" id="visualflair">
-      <header class="feature-head">
-        <p class="eyebrow">Visual Flair</p>
-        <h2>Visual Flair</h2>
-        <p class="tagline">Extra detail</p>
-      </header>
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/seventhcircle/floating-objects.mp4" poster="assets/images/seventhcircle/floating-objects.jpg"></video></figure>
-        <div>
-          <p>I made a system for making objects float because we felt that the void surrounding the level was a bit too empty.</p>
-          <div class="btn-group"><button class="btn" data-blueprint="https://blueprintue.com/render/ek_9lgh6">Floating Objects Blueprint</button></div>
-        </div>
-      </div>
-    </section>
+    <div id="project-pager"></div>
   </main>
 
   <div id="site-footer"></div>

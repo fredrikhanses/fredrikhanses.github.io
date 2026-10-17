@@ -7,206 +7,191 @@
   <meta name="description" content="Singleplayer strategy game where you compete against several AI’s for control over the mediterranean by the means of war or marital inheritance.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="site-header"></div>
 
-  <nav class="section-nav" aria-label="On this page">
-    <ul>
-      <li><a href="#top"><span>Top</span></a></li>
-      <li><a href="#gameinfo"><span>Game Info</span></a></li>
-      <li><a href="#displayinformation"><span>Display Information</span></a></li>
-      <li><a href="#realmnametext"><span>Realm Name Text</span></a></li>
-      <li><a href="#portraitsystem"><span>Portrait System</span></a></li>
-      <li><a href="#characterdeaths"><span>Character Deaths</span></a></li>
-      <li><a href="#army"><span>Army</span></a></li>
-    </ul>
-  </nav>
-
-  <main class="container" id="top">
-    <!-- ================= Game info ================= -->
-    <section class="game-info" id="gameinfo">
-      <img class="game-poster" src="assets/images/posters/marenostrum.png" alt="Mare Nostrum">
-
-      <div class="game-summary">
-        <p class="eyebrow">Game Info</p>
-        <h1>Singleplayer strategy game where you compete against several AI controlled characters for control over the mediterranean by the means of war or marital inheritance.</h1>
-        <div class="btn-group">
-          <a class="btn btn-solid" href="https://github.com/Haesst/DegreeProject" target="_blank" rel="noopener">View Project</a>
-          <a class="btn btn-solid" href="https://fredrikhanses.itch.io/mare-nostrum" target="_blank" rel="noopener">Download Game</a>
-        </div>
+  <main>
+    <section class="case-hero wrap">
+      <p class="eyebrow">Futuregames · Game project</p>
+      <h1>Mare Nostrum</h1>
+      <div class="case-lead">
+        <p>Singleplayer strategy game where you compete against several AI controlled characters for control over the mediterranean by the means of war or marital inheritance.</p>
       </div>
-
-      <div class="media youtube game-video" data-youtube="FnE-lWU-Ths" data-title="Mare Nostrum video"></div>
-
-      <aside class="project-facts">
-        <h4>My Contribution</h4>
-        <ul>
-          <li class="group"><a href="#characterdeaths">Systems</a></li>
-          <li><a href="#army">Army Pathfinding</a></li>
-          <li><a href="#army">Army Control</a></li>
-          <li><a href="#characterdeaths">Character Deaths</a></li>
-          <li class="group"><a href="#displayinformation">User Interfaces</a></li>
-          <li><a href="#displayinformation">Display Information</a></li>
-          <li><a href="#realmnametext">Realm Name Text</a></li>
-          <li><a href="#portraitsystem">Portrait System</a></li>
-        </ul>
-      </aside>
+      <div class="btn-group">
+        <a class="btn btn-solid" href="https://github.com/Haesst/DegreeProject" target="_blank" rel="noopener">View Project</a>
+        <a class="btn" href="https://fredrikhanses.itch.io/mare-nostrum" target="_blank" rel="noopener">Download Game</a>
+      </div>
+      <dl class="facts ruled-grid">
+        <div><dt>Engine</dt><dd>C++ · SFML</dd></div>
+        <div><dt>Team</dt><dd>3 developers</dd></div>
+        <div><dt>Length</dt><dd>10 weeks</dd></div>
+        <div><dt>Year</dt><dd>2021</dd></div>
+      </dl>
     </section>
 
-    <!-- ================= Display information ================= -->
-    <section class="feature" id="displayinformation">
-      <header class="feature-head">
-        <p class="eyebrow">Display Information</p>
-        <h2>Display Information</h2>
-        <p class="tagline">Empower the player to make the right decisions</p>
-      </header>
-
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/character-window.mp4" poster="assets/images/marenostrum/character-window.jpg"></video></figure>
-        <div>
-          <h3>Character Window</h3>
-          <p>The most important user interface in the game is the character window. Here the player can get information about all the characters and interact with them.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/character-window.cpp">Character Window Code</button></div>
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/family-tree.mp4" poster="assets/images/marenostrum/family-tree.jpg"></video></figure>
-        <div>
-          <h3>Family Tree</h3>
-          <p>An algorithm to find a character’s relatives and display them in a manner that represents a family tree.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/family-tree.cpp">Family Tree Code</button></div>
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/event-window.mp4" poster="assets/images/marenostrum/event-window.jpg"></video></figure>
-        <div>
-          <h3>Event Window</h3>
-          <p>An event system to notify the player about different things occuring in the game world. Through this, the AI is able to interact with the player.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/event-window.cpp">Event Window Code</button></div>
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/region-window.mp4" poster="assets/images/marenostrum/region-window.jpg"></video></figure>
-        <div>
-          <h3>Region Window</h3>
-          <p>A user interface to display the information of a region. Here you can construct buildings and handle your army as well.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/region-window.cpp">Region Window Code</button></div>
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/war-window.mp4" poster="assets/images/marenostrum/war-window.jpg"></video></figure>
-        <div>
-          <h3>War Icon &amp; Window</h3>
-          <p>User interfaces displaying in depth information regarding current wars.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/war-window.cpp">War Icon &amp; Window Code</button></div>
-        </div>
-      </div>
-
-      <div class="feature-item small">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/date-ui.mp4" poster="assets/images/marenostrum/date-ui.jpg"></video></figure>
-        <div>
-          <h3>Date &amp; Game Speed</h3>
-          <p>User Interface used to display the current ingame date and to manipulate the game speed.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/date-game-speed.cpp">Date &amp; Game Speed Code</button></div>
-        </div>
-      </div>
-
-      <div class="feature-item small">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/treasury-ui.mp4" poster="assets/images/marenostrum/treasury-ui.jpg"></video></figure>
-        <div>
-          <h3>Treasury &amp; Army Size</h3>
-          <p>User interface to display the player's treasury, income and army size.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/treasury-army-size.cpp">Treasury &amp; Army Size Code</button></div>
-        </div>
-      </div>
+    <section class="case-video wrap">
+      <div class="media youtube" data-youtube="FnE-lWU-Ths" data-title="Mare Nostrum video"></div>
     </section>
 
-    <!-- ================= Realm name text ================= -->
-    <section class="feature" id="realmnametext">
-      <header class="feature-head">
-        <p class="eyebrow">Realm Name Text</p>
-        <h2>Realm Name Text</h2>
-        <p class="tagline">Dynamic ownership</p>
-      </header>
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/realm-name.mp4" poster="assets/images/marenostrum/realm-name.jpg"></video></figure>
-        <div>
-          <p>An algorithm for displaying realm names over owned regions. They are dynamic and change position, rotation and size when regions swaps owners. Also the names of the realms changes depending of how many regions are controlled. The realm texts also fades in and out based on the level of zoom.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/realm-name.cpp">Realm Name Text Code</button></div>
-        </div>
-      </div>
-    </section>
+    <section class="contrib wrap">
+      <nav class="contrib-nav" aria-label="Contributions">
+        <p class="eyebrow">My contributions</p>
+        <a href="#displayinformation"><span>01</span>Display Information</a>
+        <a href="#realmnametext"><span>02</span>Realm Name Text</a>
+        <a href="#portraitsystem"><span>03</span>Portrait System</a>
+        <a href="#characterdeaths"><span>04</span>Character Deaths</a>
+        <a href="#army"><span>05</span>Army Behaviour</a>
+      </nav>
+      <div class="contrib-list">
+      <section class="feature" id="displayinformation">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Display Information</h2>
+          <p class="tagline">Empower the player to make the right decisions</p>
+        </header>
 
-    <!-- ================= Portrait system ================= -->
-    <section class="feature" id="portraitsystem">
-      <header class="feature-head">
-        <p class="eyebrow">Portrait System</p>
-        <h2>Portrait System</h2>
-        <p class="tagline">Making it personal</p>
-      </header>
-      <div class="feature-item small">
-        <figure class="media"><img class="zoomable" src="assets/images/marenostrum/portraits.png" alt="Character portraits"></figure>
-        <div>
-          <p>With the help of an awesome website I created our portraits. These are set based on gender and age and are swapped as the characters age.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/portrait-system.cpp">Portrait System Code</button></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Character deaths ================= -->
-    <section class="feature" id="characterdeaths">
-      <header class="feature-head">
-        <p class="eyebrow">Character Deaths</p>
-        <h2>Character Deaths</h2>
-        <p class="tagline">Making the simulation believable</p>
-      </header>
-      <div class="feature-item small">
-        <div class="gallery stack">
-          <figure>
-            <img src="assets/images/marenostrum/old-age-death.jpg" alt="Death by old age">
-            <figcaption>Death by old age</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/images/marenostrum/youth-mortality.jpg" alt="Youth mortality">
-            <figcaption>Youth mortality</figcaption>
-          </figure>
-        </div>
-        <div>
-          <p>I together with another developer created a system to handle inheritance between characters.</p>
-          <p>A function to calculate a character’s chance to die based on their age. It follows an exponential curve. Characters have a very small chance to die from birth that further decreases as they age but starts to increase fast after a certain age, fifty in our case.</p>
-          <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/character-deaths.cpp">Character Deaths Code</button></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Army ================= -->
-    <section class="feature" id="army">
-      <header class="feature-head">
-        <p class="eyebrow">Army</p>
-        <h2>Army Behaviour</h2>
-        <p class="tagline">Controlling the army</p>
-      </header>
-      <div class="feature-item">
-        <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/army.mp4" poster="assets/images/marenostrum/army.jpg"></video></figure>
-        <div>
-          <p>The player unit is selected by either direct clicking on it or by dragging a window over it. This is displayed to the player by a white outline around the unit.</p>
-          <p>Together we made a A* pathfinding algorithm that the units uses to traverse our map. I also made a function that displayed the player unit's current path represented as a line.</p>
-          <p>I thought it was hard to assess a unit’s strength while playing. Therefore I added small box that displayed the character’s colour and the unit’s current strength.</p>
-          <div class="btn-group">
-            <button class="btn" data-code-src="assets/code/marenostrum/army-ui.cpp">Army UI Code</button>
-            <button class="btn" data-code-src="assets/code/marenostrum/army-pathfinding.cpp">Army Pathfinding Code</button>
-            <button class="btn" data-code-src="assets/code/marenostrum/army-movement.cpp">Army Movement Code</button>
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/character-window.mp4" poster="assets/images/marenostrum/character-window.jpg"></video></figure>
+            <div>
+              <h3>Character Window</h3>
+              <p>The most important user interface in the game is the character window. Here the player can get information about all the characters and interact with them.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/character-window.cpp">Character Window Code</button></div>
+            </div>
           </div>
-        </div>
+
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/family-tree.mp4" poster="assets/images/marenostrum/family-tree.jpg"></video></figure>
+            <div>
+              <h3>Family Tree</h3>
+              <p>An algorithm to find a character’s relatives and display them in a manner that represents a family tree.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/family-tree.cpp">Family Tree Code</button></div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/event-window.mp4" poster="assets/images/marenostrum/event-window.jpg"></video></figure>
+            <div>
+              <h3>Event Window</h3>
+              <p>An event system to notify the player about different things occuring in the game world. Through this, the AI is able to interact with the player.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/event-window.cpp">Event Window Code</button></div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/region-window.mp4" poster="assets/images/marenostrum/region-window.jpg"></video></figure>
+            <div>
+              <h3>Region Window</h3>
+              <p>A user interface to display the information of a region. Here you can construct buildings and handle your army as well.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/region-window.cpp">Region Window Code</button></div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/war-window.mp4" poster="assets/images/marenostrum/war-window.jpg"></video></figure>
+            <div>
+              <h3>War Icon &amp; Window</h3>
+              <p>User interfaces displaying in depth information regarding current wars.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/war-window.cpp">War Icon &amp; Window Code</button></div>
+            </div>
+          </div>
+
+          <div class="feature-item small">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/date-ui.mp4" poster="assets/images/marenostrum/date-ui.jpg"></video></figure>
+            <div>
+              <h3>Date &amp; Game Speed</h3>
+              <p>User Interface used to display the current ingame date and to manipulate the game speed.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/date-game-speed.cpp">Date &amp; Game Speed Code</button></div>
+            </div>
+          </div>
+
+          <div class="feature-item small">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/treasury-ui.mp4" poster="assets/images/marenostrum/treasury-ui.jpg"></video></figure>
+            <div>
+              <h3>Treasury &amp; Army Size</h3>
+              <p>User interface to display the player's treasury, income and army size.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/treasury-army-size.cpp">Treasury &amp; Army Size Code</button></div>
+            </div>
+          </div>
+      </section>
+      <section class="feature" id="realmnametext">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Realm Name Text</h2>
+          <p class="tagline">Dynamic ownership</p>
+        </header>
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/realm-name.mp4" poster="assets/images/marenostrum/realm-name.jpg"></video></figure>
+            <div>
+              <p>An algorithm for displaying realm names over owned regions. They are dynamic and change position, rotation and size when regions swaps owners. Also the names of the realms changes depending of how many regions are controlled. The realm texts also fades in and out based on the level of zoom.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/realm-name.cpp">Realm Name Text Code</button></div>
+            </div>
+          </div>
+      </section>
+      <section class="feature" id="portraitsystem">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Portrait System</h2>
+          <p class="tagline">Making it personal</p>
+        </header>
+          <div class="feature-item small">
+            <figure class="media"><img class="zoomable" src="assets/images/marenostrum/portraits.png" alt="Character portraits"></figure>
+            <div>
+              <p>With the help of an awesome website I created our portraits. These are set based on gender and age and are swapped as the characters age.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/portrait-system.cpp">Portrait System Code</button></div>
+            </div>
+          </div>
+      </section>
+      <section class="feature" id="characterdeaths">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Character Deaths</h2>
+          <p class="tagline">Making the simulation believable</p>
+        </header>
+          <div class="feature-item small">
+            <div class="gallery stack">
+              <figure>
+                <img src="assets/images/marenostrum/old-age-death.jpg" alt="Death by old age">
+                <figcaption>Death by old age</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/images/marenostrum/youth-mortality.jpg" alt="Youth mortality">
+                <figcaption>Youth mortality</figcaption>
+              </figure>
+            </div>
+            <div>
+              <p>I together with another developer created a system to handle inheritance between characters.</p>
+              <p>A function to calculate a character’s chance to die based on their age. It follows an exponential curve. Characters have a very small chance to die from birth that further decreases as they age but starts to increase fast after a certain age, fifty in our case.</p>
+              <div class="btn-group"><button class="btn" data-code-src="assets/code/marenostrum/character-deaths.cpp">Character Deaths Code</button></div>
+            </div>
+          </div>
+      </section>
+      <section class="feature" id="army">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Army Behaviour</h2>
+          <p class="tagline">Controlling the army</p>
+        </header>
+          <div class="feature-item">
+            <figure class="media"><video data-autoplay data-src="assets/video/marenostrum/army.mp4" poster="assets/images/marenostrum/army.jpg"></video></figure>
+            <div>
+              <p>The player unit is selected by either direct clicking on it or by dragging a window over it. This is displayed to the player by a white outline around the unit.</p>
+              <p>Together we made a A* pathfinding algorithm that the units uses to traverse our map. I also made a function that displayed the player unit's current path represented as a line.</p>
+              <p>I thought it was hard to assess a unit’s strength while playing. Therefore I added small box that displayed the character’s colour and the unit’s current strength.</p>
+              <div class="btn-group">
+                <button class="btn" data-code-src="assets/code/marenostrum/army-ui.cpp">Army UI Code</button>
+                <button class="btn" data-code-src="assets/code/marenostrum/army-pathfinding.cpp">Army Pathfinding Code</button>
+                <button class="btn" data-code-src="assets/code/marenostrum/army-movement.cpp">Army Movement Code</button>
+              </div>
+            </div>
+          </div>
+      </section>
       </div>
     </section>
+
+    <div id="project-pager"></div>
   </main>
 
   <div id="site-footer"></div>

@@ -3,98 +3,208 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Video Game Developer | Stockholm | Fredrik Hanses</title>
-  <meta name="description" content="Fredrik Hanses, Video Game Developer in Stockholm, Sweden.">
+  <title>Fredrik Hanses · Game Programmer</title>
+  <meta name="description" content="Fredrik Hanses, game programmer in Stockholm, Sweden, specialising in VR, hand tracking and console platform work. Shipped Demeo and Demeo x Dungeons &amp; Dragons: Battlemarked at Resolution Games.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="site-header"></div>
 
-  <nav class="section-nav" aria-label="On this page">
-    <ul>
-      <li><a href="#top"><span>Top</span></a></li>
-      <li><a href="#resolutiongames"><span>Resolution Games</span></a></li>
-      <li><a href="#futuregames"><span>Futuregames</span></a></li>
-    </ul>
-  </nav>
-
-  <main class="container" id="top">
-    <section class="page-intro home-intro">
-      <h1>Hi! I'm Fredrik Hanses, a game programmer specialising in VR and console games.</h1>
-      <p>I love crafting systems, from engaging AI and fun combat mechanics to interactive UI. At Resolution Games I have shipped <a href="demeo.html">Demeo</a> and <a href="battlemarked.html">Demeo x Dungeons &amp; Dragons: Battlemarked</a>, with a focus on virtual reality, hand tracking and platform implementation for Meta Quest and PlayStation&nbsp;5.</p>
-      <p><a class="more-link" href="about.html">More about me &rarr;</a></p>
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-main">
+        <p class="eyebrow">Game Programmer · Resolution Games · Stockholm</p>
+        <h1>I build the systems players <span class="accent">reach out and touch.</span></h1>
+        <p class="hero-lead">VR, hand tracking and console platform work for Meta Quest and PlayStation&nbsp;5. I shipped <a href="demeo.html">Demeo</a> and <a href="battlemarked.html">Demeo x Dungeons &amp; Dragons: Battlemarked</a>, and I love building AI, combat mechanics and interactive UI.</p>
+        <div class="btn-group">
+          <a class="btn btn-solid btn-lg" href="#work">See selected work
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></a>
+          <a class="btn btn-lg" href="mailto:fredrik.hanses@gmail.com">fredrik.hanses@gmail.com</a>
+        </div>
+      </div>
+      <aside class="panel now-card" aria-label="Currently">
+        <div class="now-label">Currently</div>
+        <p class="now-title"><a href="battlemarked.html">Demeo x Dungeons &amp; Dragons: Battlemarked</a></p>
+        <p>Owning the PS5 version through DLC and certification, plus OpenXR hand tracking and shared spatial anchors in VR.</p>
+        <div class="chips"><span class="chip">Meta Quest</span><span class="chip">PS5</span><span class="chip">PC</span><span class="chip">Unity</span></div>
+      </aside>
     </section>
 
-    <section class="project-section" id="resolutiongames">
-      <header class="section-head">
-        <p class="eyebrow">Professional</p>
-        <h2 class="section-title">Resolution Games</h2>
-        <p class="section-meta">Game Programmer: 2022 &ndash; present</p>
-      </header>
-      <div class="project-grid cols-2">
-        <a class="project-card" href="battlemarked.html" data-hover-video>
-          <img src="assets/images/posters/battlemarked.png" alt="Demeo x Dungeons &amp; Dragons: Battlemarked poster">
+    <section class="focus wrap" aria-labelledby="focus-h">
+      <h2 id="focus-h" class="visually-hidden">What I build</h2>
+      <div class="ruled-grid">
+        <div class="focus-item"><span class="num">01</span><h3>Hand tracking &amp; VR input</h3><p>OpenXR gestures, grab, point and poke interactions, and UI rebuilt for hands.</p></div>
+        <div class="focus-item"><span class="num">02</span><h3>Console platforms</h3><p>PS5 and PS VR2: Activities, PlayStation Plus, haptics, DLC and certification.</p></div>
+        <div class="focus-item"><span class="num">03</span><h3>Mixed reality &amp; co-location</h3><p>Spatial anchors that pin one shared board to a real table for a whole room.</p></div>
+        <div class="focus-item"><span class="num">04</span><h3>Gameplay systems</h3><p>Auto saves, settings, loading flows, accessibility, AI, combat and UI.</p></div>
+      </div>
+    </section>
+
+    <section class="home-section wrap" id="work">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Professional work</p>
+          <h2>Resolution Games</h2>
+        </div>
+        <p class="section-meta">Game Programmer · 2022 – present</p>
+      </div>
+
+      <article class="panel featured">
+        <a class="art" href="battlemarked.html" data-hover-video aria-label="Demeo x Dungeons &amp; Dragons: Battlemarked">
+          <img src="assets/images/battlemarked/preview.jpg" alt="">
           <video data-src="assets/video/battlemarked/preview.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unity</span><h2>Demeo x Dungeons &amp; Dragons: Battlemarked</h2></div>
+          <span class="art-title">BATTLE<br>MARKED</span>
         </a>
-        <a class="project-card" href="demeo.html" data-hover-video>
-          <img src="assets/images/posters/demeo.png" alt="Demeo poster">
-          <video data-src="assets/video/demeo/preview.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unity</span><h2>Demeo</h2></div>
+        <div class="featured-body">
+          <div class="chips"><span class="chip solid">Featured</span><span class="chip">Unity</span><span class="chip">VR · PC · PS5</span></div>
+          <h3>Demeo x Dungeons &amp; Dragons: Battlemarked</h3>
+          <p>A turn-based, choice-driven tabletop adventure in the Forgotten Realms.</p>
+          <ul class="arrow-list">
+            <li><span><strong>PS5 owner</strong> after the port: shipped paid DLC and new localisations through Sony certification.</span></li>
+            <li><span><strong>OpenXR hand tracking</strong>: gestures to move, rotate, scale and tilt; grab, point or poke pieces and dice.</span></li>
+            <li><span><strong>Spatial anchors</strong>: players in one room share a single board pinned to a real table.</span></li>
+          </ul>
+          <a class="text-link strong" href="battlemarked.html">Read the case study
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <div class="card-grid">
+        <article class="panel project-card">
+          <a class="art" href="demeo.html" data-hover-video aria-label="Demeo">
+            <img src="assets/images/demeo/mixedreality.jpg" alt="">
+            <video data-src="assets/video/demeo/handtracking.mp4" preload="none"></video>
+            <span class="art-title">DEMEO</span>
+          </a>
+          <div class="project-card-body">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">Quest · PS VR2 · PC</span></div>
+            <h3>Demeo</h3>
+            <p>Cooperative tabletop dungeon crawler for up to four players.</p>
+            <ul class="arrow-list">
+              <li><span>PS VR2 launch port: Activities, PlayStation Plus, audio-driven Sense rumble</span></li>
+              <li><span>Took over hand tracking, including the tutorial</span></li>
+              <li><span>Built turn-by-turn auto saves, later reused in Battlemarked</span></li>
+            </ul>
+            <a class="text-link" href="demeo.html">View project</a>
+          </div>
+        </article>
+
+        <article class="panel project-card">
+          <a class="art" href="demeobattles.html" data-hover-video aria-label="Demeo Battles">
+            <img src="assets/images/demeobattles/preview.jpg" alt="">
+            <video data-src="assets/video/demeobattles/preview.mp4" preload="none"></video>
+            <span class="art-title">DEMEO<br>BATTLES</span>
+          </a>
+          <div class="project-card-body">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">VR · MR</span></div>
+            <h3>Demeo Battles</h3>
+            <p>Competitive turn-based strategy with champions and minions.</p>
+            <ul class="arrow-list">
+              <li><span>Made the tutorial fully playable with hand tracking</span></li>
+              <li><span>Brought mixed reality and tilt accessibility over from Demeo</span></li>
+            </ul>
+            <a class="text-link" href="demeobattles.html">View project</a>
+          </div>
+        </article>
+
+        <article class="panel project-card">
+          <a class="art" href="grimkeep.html" data-hover-video aria-label="GrimKeep">
+            <img src="assets/images/grimkeep/preview.jpg" alt="">
+            <video data-src="assets/video/grimkeep/preview.mp4" preload="none"></video>
+            <span class="art-title">GRIMKEEP</span>
+          </a>
+          <div class="project-card-body">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">PS5</span></div>
+            <h3>GrimKeep</h3>
+            <p>Singleplayer roguelite dice-builder through a cursed city.</p>
+            <ul class="arrow-list">
+              <li><span>PlayStation&nbsp;5 platform implementation</span></li>
+            </ul>
+            <a class="text-link" href="grimkeep.html">View project</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section wrap" id="education">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Education</p>
+          <h2>Futuregames</h2>
+        </div>
+        <p class="section-meta">Game Programming · 2019 – 2021</p>
+      </div>
+      <div class="school-grid">
+        <a class="school-card" href="marenostrum.html">
+          <div class="school-card-top"><span class="chip">SFML</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+          <span class="school-card-name">Mare Nostrum</span>
+          <span class="school-card-line">Strategy · 3 devs · UI, realm name algorithm and army pathfinding</span>
         </a>
-        <a class="project-card" href="demeobattles.html" data-hover-video>
-          <img src="assets/images/posters/demeobattles.png" alt="Demeo Battles poster">
-          <video data-src="assets/video/demeobattles/preview.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unity</span><h2>Demeo Battles</h2></div>
+        <a class="school-card" href="bullethell.html">
+          <div class="school-card-top"><span class="chip">SDL</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+          <span class="school-card-name">Bullet Hell</span>
+          <span class="school-card-line">Shoot-'em-up · 3 devs · Characters, enemies, controller support and high scores</span>
         </a>
-        <a class="project-card" href="grimkeep.html" data-hover-video>
-          <img src="assets/images/posters/grimkeep.png" alt="GrimKeep poster">
-          <video data-src="assets/video/grimkeep/preview.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unity</span><h2>GrimKeep</h2></div>
+        <a class="school-card" href="alter.html">
+          <div class="school-card-top"><span class="chip">Unity</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+          <span class="school-card-name">Alter</span>
+          <span class="school-card-line">3D platformer · 11 devs · Game manager, mood changes and SFX &amp; VFX systems</span>
+        </a>
+        <a class="school-card" href="projectbrawl.html">
+          <div class="school-card-top"><span class="chip">Unity</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+          <span class="school-card-name">Project Brawl</span>
+          <span class="school-card-line">Beat-'em-up · 5 devs · Combat, animation and movement logic</span>
+        </a>
+        <a class="school-card" href="arrowhood.html">
+          <div class="school-card-top"><span class="chip">Unreal</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+          <span class="school-card-name">Arrowhood</span>
+          <span class="school-card-line">Split-screen FPS · 13 devs · Targets, stat tracking, scoreboard, crosshair and tutorial UI</span>
+        </a>
+        <a class="school-card" href="seventhcircle.html">
+          <div class="school-card-top"><span class="chip">Unreal</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+          <span class="school-card-name">Seventh Circle</span>
+          <span class="school-card-line">First-person puzzle · 9 devs · Smoke wall AI, menu interface and floating objects</span>
+        </a>
+      </div>
+
+      <div class="sub-head">
+        <h3>KTH Royal Institute of Technology</h3>
+        <p class="section-meta">Information Technology · 2018</p>
+      </div>
+      <div class="school-grid">
+        <a class="school-card" href="sumodash.html">
+          <div class="school-card-top"><span class="chip">Unity</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+          <span class="school-card-name">Sumo Dash</span>
+          <span class="school-card-line">Mobile endless runner · 7 devs · Scene management and 3D models</span>
         </a>
       </div>
     </section>
 
-    <section class="project-section" id="futuregames">
-      <header class="section-head">
-        <p class="eyebrow">Education</p>
-        <h2 class="section-title">Futuregames</h2>
-        <p class="section-meta">Game Programming: 2019 &ndash; 2021</p>
-      </header>
-      <div class="project-grid">
-        <a class="project-card" href="marenostrum.html" data-hover-video>
-          <img src="assets/images/posters/marenostrum.png" alt="Mare Nostrum poster">
-          <video data-src="assets/video/marenostrum/war-window.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">SFML</span><h2>Mare Nostrum</h2></div>
-        </a>
-        <a class="project-card" href="bullethell.html" data-hover-video>
-          <img src="assets/images/posters/bullethell.png" alt="Bullet Hell poster">
-          <video data-src="assets/video/bullethell/player-characters.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">SDL</span><h2>Bullet Hell</h2></div>
-        </a>
-        <a class="project-card" href="alter.html" data-hover-video>
-          <img src="assets/images/posters/alter.png" alt="Alter poster">
-          <video data-src="assets/video/alter/preview.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unity</span><h2>Alter</h2></div>
-        </a>
-        <a class="project-card" href="projectbrawl.html" data-hover-video>
-          <img src="assets/images/posters/projectbrawl.png" alt="Project Brawl poster">
-          <video data-src="assets/video/projectbrawl/combat.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unity</span><h2>Project Brawl</h2></div>
-        </a>
-        <a class="project-card" href="arrowhood.html" data-hover-video>
-          <img src="assets/images/posters/arrowhood.png" alt="Arrowhood poster">
-          <video data-src="assets/video/arrowhood/preview.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unreal</span><h2>Arrowhood</h2></div>
-        </a>
-        <a class="project-card" href="seventhcircle.html" data-hover-video>
-          <img src="assets/images/posters/seventhcircle.png" alt="Seventh Circle poster">
-          <video data-src="assets/video/seventhcircle/preview.mp4" preload="none"></video>
-          <div class="card-label"><span class="tag">Unreal</span><h2>Seventh Circle</h2></div>
-        </a>
+    <section class="home-section wrap" id="about">
+      <div class="about">
+        <div class="about-text">
+          <p class="eyebrow">About</p>
+          <h2>Coding is my creative calling.</h2>
+          <p>Ever since the days of the Game Boy Color and Super Nintendo, making games has been my secret dream. I trained in game programming at Futuregames in Stockholm and joined Resolution Games in 2022. Most of my days are spent where hardware meets play: hands, headsets, controllers and the platform rules that ship them.</p>
+          <p>Away from the keyboard you will find me snowboarding, around a board game with friends or travelling, and of course playing video games.</p>
+        </div>
+        <div class="panel nine-games">
+          <h3>Nine games that shaped me</h3>
+          <ol>
+            <li><span>01</span>Donkey Kong Country</li>
+            <li><span>02</span>Pokémon Blue</li>
+            <li><span>03</span>Diablo II</li>
+            <li><span>04</span>Fallout 2</li>
+            <li><span>05</span>KOTOR II: The Sith Lords</li>
+            <li><span>06</span>The Witcher: Enhanced Edition</li>
+            <li><span>07</span>Age of Empires II</li>
+            <li><span>08</span>Rome: Total War</li>
+            <li><span>09</span>Europa Universalis IV</li>
+          </ol>
+        </div>
       </div>
     </section>
   </main>

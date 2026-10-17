@@ -7,87 +7,85 @@
   <meta name="description" content="Mobile third-person singleplayer endless runner.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="site-header"></div>
 
-  <nav class="section-nav" aria-label="On this page">
-    <ul>
-      <li><a href="#top"><span>Top</span></a></li>
-      <li><a href="#gameinfo"><span>Game Info</span></a></li>
-      <li><a href="#scenemanagement"><span>Scene Management</span></a></li>
-      <li><a href="#3dmodels"><span>3D Models</span></a></li>
-    </ul>
-  </nav>
-
-  <main class="container" id="top">
-    <section class="game-info" id="gameinfo">
-      <img class="game-poster round" src="assets/images/posters/sumodash.png" alt="Sumo Dash">
-
-      <div class="game-summary">
-        <p class="eyebrow">Game Info</p>
-        <h1>Mobile Third-person Singleplayer Endless Runner set during night time in an asian city.</h1>
-        <div class="btn-group">
-          <a class="btn btn-solid" href="https://github.com/fredrikhanses/II1305-group6" target="_blank" rel="noopener">View Project</a>
-          <a class="btn btn-solid" href="https://fredrikhanses.itch.io/sumo-dash" target="_blank" rel="noopener">Download Game</a>
-        </div>
+  <main>
+    <section class="case-hero wrap">
+      <p class="eyebrow">KTH · Game project</p>
+      <h1>Sumo Dash</h1>
+      <div class="case-lead">
+        <p>Mobile Third-person Singleplayer Endless Runner set during night time in an asian city.</p>
       </div>
-
-      <div class="media youtube game-video" data-youtube="-Gu9XIX2ZOo" data-title="Sumo Dash gameplay"></div>
-
-      <aside class="project-facts">
-        <h4>My Contribution</h4>
-        <ul>
-          <li class="group"><a href="#scenemanagement">Design</a></li>
-          <li><a href="#scenemanagement">Scene Building</a></li>
-          <li class="group"><a href="#3dmodels">Art</a></li>
-          <li><a href="#3dmodels">3D Models</a></li>
-        </ul>
-      </aside>
+      <div class="btn-group">
+        <a class="btn btn-solid" href="https://github.com/fredrikhanses/II1305-group6" target="_blank" rel="noopener">View Project</a>
+        <a class="btn" href="https://fredrikhanses.itch.io/sumo-dash" target="_blank" rel="noopener">Download Game</a>
+      </div>
+      <dl class="facts ruled-grid">
+        <div><dt>Engine</dt><dd>Unity</dd></div>
+        <div><dt>Team</dt><dd>7 developers</dd></div>
+        <div><dt>Length</dt><dd>4 weeks</dd></div>
+        <div><dt>Year</dt><dd>2018</dd></div>
+      </dl>
     </section>
 
-    <section class="feature" id="scenemanagement">
-      <header class="feature-head">
-        <p class="eyebrow">Scene Management</p>
-        <h2>Scene Management</h2>
-        <p class="tagline">Too many chefs ruins the soup</p>
-      </header>
-      <div class="feature-item">
-        <div class="gallery cols-3">
-          <figure><img src="assets/images/sumodash/week-1.png" alt="Week 1"><figcaption>Week 1</figcaption></figure>
-          <figure><img src="assets/images/sumodash/week-2.png" alt="Week 2"><figcaption>Week 2</figcaption></figure>
-          <figure><img src="assets/images/sumodash/week-4.png" alt="Week 4"><figcaption>Week 4</figcaption></figure>
-        </div>
-        <div>
-          <p>I took on the role as a scene manager after a week with problems regarding the main scene. It was my responsibility to incorporate all of the other team member's work.</p>
-        </div>
+    <section class="case-video wrap">
+      <div class="media youtube" data-youtube="-Gu9XIX2ZOo" data-title="Sumo Dash gameplay"></div>
+    </section>
+
+    <section class="contrib wrap">
+      <nav class="contrib-nav" aria-label="Contributions">
+        <p class="eyebrow">My contributions</p>
+        <a href="#scenemanagement"><span>01</span>Scene Management</a>
+        <a href="#3dmodels"><span>02</span>3D Models</a>
+      </nav>
+      <div class="contrib-list">
+      <section class="feature" id="scenemanagement">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>Scene Management</h2>
+          <p class="tagline">Too many chefs ruins the soup</p>
+        </header>
+          <div class="feature-item">
+            <div class="gallery cols-3">
+              <figure><img src="assets/images/sumodash/week-1.png" alt="Week 1"><figcaption>Week 1</figcaption></figure>
+              <figure><img src="assets/images/sumodash/week-2.png" alt="Week 2"><figcaption>Week 2</figcaption></figure>
+              <figure><img src="assets/images/sumodash/week-4.png" alt="Week 4"><figcaption>Week 4</figcaption></figure>
+            </div>
+            <div>
+              <p>I took on the role as a scene manager after a week with problems regarding the main scene. It was my responsibility to incorporate all of the other team member's work.</p>
+            </div>
+          </div>
+      </section>
+      <section class="feature" id="3dmodels">
+        <header class="feature-head">
+          <div class="feature-meta"></div>
+          <h2>3D Models</h2>
+          <p class="tagline">Stepping out of the comfort zone</p>
+        </header>
+          <div class="feature-item">
+            <div class="gallery cols-3">
+              <figure><img src="assets/images/sumodash/salmon.png" alt="Salmon"></figure>
+              <figure><img src="assets/images/sumodash/soup.png" alt="Soup"></figure>
+              <figure><img src="assets/images/sumodash/rice.png" alt="Rice"></figure>
+              <figure><img src="assets/images/sumodash/salad.png" alt="Salad"></figure>
+              <figure><img src="assets/images/sumodash/van.png" alt="Van"></figure>
+              <figure><img src="assets/images/sumodash/stand.png" alt="Stand"></figure>
+              <figure><img src="assets/images/sumodash/sumo.png" alt="Sumo"></figure>
+              <figure><img src="assets/images/sumodash/cone.png" alt="Cone"></figure>
+            </div>
+            <div>
+              <p>We, the developers, were all programmers but we had to create art assets. That is why I had to learn the basics of 3D modelling.</p>
+            </div>
+          </div>
+      </section>
       </div>
     </section>
 
-    <section class="feature" id="3dmodels">
-      <header class="feature-head">
-        <p class="eyebrow">3D Models</p>
-        <h2>3D Models</h2>
-        <p class="tagline">Stepping out of the comfort zone</p>
-      </header>
-      <div class="feature-item">
-        <div class="gallery cols-3">
-          <figure><img src="assets/images/sumodash/salmon.png" alt="Salmon"></figure>
-          <figure><img src="assets/images/sumodash/soup.png" alt="Soup"></figure>
-          <figure><img src="assets/images/sumodash/rice.png" alt="Rice"></figure>
-          <figure><img src="assets/images/sumodash/salad.png" alt="Salad"></figure>
-          <figure><img src="assets/images/sumodash/van.png" alt="Van"></figure>
-          <figure><img src="assets/images/sumodash/stand.png" alt="Stand"></figure>
-          <figure><img src="assets/images/sumodash/sumo.png" alt="Sumo"></figure>
-          <figure><img src="assets/images/sumodash/cone.png" alt="Cone"></figure>
-        </div>
-        <div>
-          <p>We, the developers, were all programmers but we had to create art assets. That is why I had to learn the basics of 3D modelling.</p>
-        </div>
-      </div>
-    </section>
+    <div id="project-pager"></div>
   </main>
 
   <div id="site-footer"></div>
