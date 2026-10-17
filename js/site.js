@@ -41,7 +41,7 @@ const isHome = currentPage === "index";
 /* ---------- Header / footer / pager ---------- */
 
 function brand(href) {
-  return `<a class="brand" href="${href}"><span class="brand-mark">FH</span><span class="brand-name">${SITE.name}</span></a>`;
+  return `<a class="brand" href="${href}"><img class="brand-avatar" src="assets/images/avatar.jpg" alt=""><span class="brand-name">${SITE.name}</span></a>`;
 }
 
 function renderHeader() {
