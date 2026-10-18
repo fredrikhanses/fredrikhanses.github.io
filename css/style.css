@@ -191,7 +191,8 @@ img.missing-asset { color: transparent; }
 }
 .now-label::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 .now-title { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.25; }
-.now-title a { text-decoration: none; }
+/* Card titles link to their project pages, styled like plain headings. */
+.now-title a, .featured-body h3 a, .project-card-body h3 a { text-decoration: none; }
 .now-card p:not(.now-title) { font-size: 15px; color: var(--text-2); }
 
 /* Thin-ruled grid: the 1px gap shows the border colour behind the cells. */
