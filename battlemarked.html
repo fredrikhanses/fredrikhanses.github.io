@@ -15,7 +15,7 @@
 
   <main>
     <section class="case-hero wrap">
-      <p class="eyebrow">Resolution Games · Case study</p>
+      <p class="eyebrow">Resolution Games · Released game</p>
       <h1>Demeo x Dungeons &amp; Dragons: <span class="accent">Battlemarked</span></h1>
       <div class="case-lead">
         <p>Experience the magic of Dungeons &amp; Dragons like never before in the fantasy tabletop adventure, Demeo x Dungeons &amp; Dragons: Battlemarked.</p>
@@ -44,23 +44,23 @@
         <a href="#playstation5"><span>03</span>PlayStation 5</a>
         <a href="#handtracking"><span>04</span>Hand Tracking</a>
         <a href="#spatialanchors"><span>05</span>Spatial Anchors</a>
-        <a href="#networking"><span>06</span>Networking</a>
-        <a href="#intro"><span>07</span>Intro</a>
-        <a href="#loadingscreen"><span>08</span>Loading Screen</a>
-        <a href="#settings"><span>09</span>Settings</a>
-        <a href="#accessibility"><span>10</span>Accessibility</a>
+        <a href="#intro"><span>06</span>Intro</a>
+        <a href="#loadingscreen"><span>07</span>Loading Screen</a>
+        <a href="#settings"><span>08</span>Settings</a>
+        <a href="#accessibility"><span>09</span>Accessibility</a>
       </nav>
       <div class="contrib-list">
       <section class="feature" id="virtualreality">
         <header class="feature-head">
           <div class="feature-meta"><span class="chip">Platforms</span></div>
           <h2>Virtual Reality</h2>
-          <p class="tagline">TODO: tagline</p>
+          <p class="tagline">Bringing the table to VR</p>
         </header>
           <div class="feature-item">
             <figure class="media"><img class="zoomable" src="assets/images/battlemarked/virtualreality.jpg" alt="Battlemarked played in virtual reality"></figure>
             <div>
-              <p>TODO: describe what you built and why.</p>
+              <p>When I joined Battlemarked, the game already had a working VR implementation built on OpenXR.</p>
+              <p>Throughout the project I refined what was there and made sure every new feature worked as it should in VR, alongside building the game's <a href="#handtracking">hand tracking</a> support.</p>
             </div>
           </div>
       </section>
@@ -68,12 +68,14 @@
         <header class="feature-head">
           <div class="feature-meta"><span class="chip">Platforms</span></div>
           <h2>Mixed Reality</h2>
-          <p class="tagline">TODO: tagline</p>
+          <p class="tagline">A dungeon on your kitchen table</p>
         </header>
           <div class="feature-item">
             <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/mixedreality.mp4" poster="assets/images/battlemarked/mixedreality.jpg"></video></figure>
             <div>
-              <p>TODO: describe what you built and why.</p>
+              <p>In mixed reality, players see their real room through passthrough, with the game board placed in it.</p>
+              <p>When I joined, passthrough already worked but relied on the Meta SDK. I reimplemented it with OpenXR, so the same code could be reused on other headsets such as Pico.</p>
+              <p>Passthrough can be turned on or off in the settings, and together with <a href="#spatialanchors">spatial anchors</a> it lets the board sit on a real table in your room.</p>
             </div>
           </div>
       </section>
@@ -117,19 +119,6 @@
             <div>
               <p>Players in the same physical space can share the virtual game board.</p>
               <p>The board can be placed on top of a real table, and it stays aligned to that table for everyone in the room, so players can gather around it just like a physical board game.</p>
-            </div>
-          </div>
-      </section>
-      <section class="feature" id="networking">
-        <header class="feature-head">
-          <div class="feature-meta"><span class="chip">Features</span></div>
-          <h2>Networking</h2>
-          <p class="tagline">TODO: tagline</p>
-        </header>
-          <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/networking.mp4" poster="assets/images/battlemarked/networking.jpg"></video></figure>
-            <div>
-              <p>TODO: describe what you built and why.</p>
             </div>
           </div>
       </section>
