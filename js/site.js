@@ -135,7 +135,7 @@ function initAssetFallbacks() {
 /* ---------- Videos ---------- */
 
 function initVideos() {
-  // Feature videos: autoplay muted while on screen, with a sound toggle (like the Wix player).
+  // Feature videos: autoplay muted while on screen; clips with sound also get a sound toggle.
   const autoVideos = document.querySelectorAll("video[data-autoplay]");
   const io = new IntersectionObserver(entries => {
     entries.forEach(({ target, isIntersecting }) => {
@@ -155,6 +155,8 @@ function initVideos() {
     video.addEventListener("error", () => markMissing(video.parentElement, video.dataset.src), { once: true });
     io.observe(video);
 
+    // Most clips are silent; only those marked <video data-sound> get a sound button.
+    if (!video.hasAttribute("data-sound")) return;
     const btn = document.createElement("button");
     btn.className = "mute-toggle";
     btn.setAttribute("aria-label", "Toggle sound");
