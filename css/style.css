@@ -514,3 +514,13 @@ body.modal-open { overflow: hidden; }
   .now-card .chips { align-self: start; }
   .now-art { grid-row: 1 / span 4; margin: -24px 0 -24px -24px; border-bottom: 0; border-right: 1px solid var(--border); aspect-ratio: auto; min-height: 100%; }
 }
+
+/* Below 900px the nine games always drop under the About text (without this they flip back beside it
+   between 860 and 890px), centred and with bigger covers that still fit a phone. */
+@media (max-width: 900px) {
+  .about-text { flex-basis: 100%; }
+  .nine-games { margin-inline: auto; max-width: 100%; }
+  .nine-games h3 { text-align: center; }
+  /* 112px covers, shrinking on phones to whatever fits beside the gutters, panel padding and gaps */
+  .cover-grid { grid-template-columns: repeat(3, clamp(60px, calc((100vw - 112px) / 3), 112px)); gap: 10px; }
+}
