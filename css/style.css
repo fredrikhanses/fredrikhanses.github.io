@@ -223,20 +223,14 @@ img.missing-asset { color: transparent; }
 .sub-head { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; justify-content: space-between; }
 .sub-head h3 { font-weight: 700; font-size: 24px; }
 
-/* Key art: a screenshot with the game's name set over it; a hover video fades in on top. */
+/* Key art (the game's name is in the card body below it); a hover video fades in on top. */
 .art { position: relative; display: flex; align-items: flex-end; overflow: hidden; background: #1F1A14; text-decoration: none; }
 .art > img, .art > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .art > video { opacity: 0; transition: opacity .35s; }
 .art:hover > video.ready, .art:focus-visible > video.ready { opacity: 1; }
-.art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,16,19,0) 35%, rgba(14,16,19,.85)); pointer-events: none; }
-.art-title {
-  position: relative; z-index: 1; font-family: var(--font-display); font-weight: 900; font-stretch: 125%;
-  line-height: .95; color: #F3E6D0; letter-spacing: -1px; text-shadow: 0 2px 18px rgba(0,0,0,.5);
-}
 
 .featured { display: flex; flex-wrap: wrap; border-radius: 20px; overflow: hidden; }
 .featured .art { flex: 1 1 520px; min-height: 420px; padding: 32px; }
-.featured .art-title { font-size: clamp(44px, 5.4vw, 64px); }
 .featured-body { flex: 1 1 420px; min-width: 0; padding: 40px; display: flex; flex-direction: column; gap: 20px; }
 .featured-body h3 { font-weight: 800; font-size: clamp(28px, 3vw, 34px); line-height: 1.1; }
 .featured-body > p { color: var(--text-2); }
@@ -246,7 +240,6 @@ img.missing-asset { color: transparent; }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
 .project-card { overflow: hidden; display: flex; flex-direction: column; }
 .project-card .art { height: 200px; padding: 20px; }
-.project-card .art-title { font-size: 34px; letter-spacing: -.5px; color: #F1EEE8; }
 .project-card-body { padding: 24px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
 .project-card-body h3 { font-weight: 700; font-size: 24px; line-height: 1.2; }
 .project-card-body > p { font-size: 15px; color: var(--text-3); }
@@ -523,4 +516,10 @@ body.modal-open { overflow: hidden; }
   .nine-games h3 { text-align: center; }
   /* 112px covers, shrinking on phones to whatever fits beside the gutters, panel padding and gaps */
   .cover-grid { grid-template-columns: repeat(3, clamp(60px, calc((100vw - 112px) / 3), 112px)); gap: 10px; }
+}
+
+/* When the featured card stacks (1004px and below), a short, wide art strip would cut the faces off the
+   Battlemarked key art, so keep it 16:10 (phones keep the 260px minimum). */
+@media (max-width: 1004px) {
+  .featured .art { min-height: 260px; aspect-ratio: 16 / 10; }
 }
