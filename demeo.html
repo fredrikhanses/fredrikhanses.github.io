@@ -44,7 +44,7 @@
         <a href="#handtracking"><span>04</span>Hand Tracking</a>
         <a href="#spatialanchors"><span>05</span>Spatial Anchors</a>
         <a href="#autosaves"><span>06</span>Auto Saves</a>
-        <a href="#accessibility"><span>07</span>Accessibility</a>
+        <a href="#tilt"><span>07</span>Tilt</a>
       </nav>
       <div class="contrib-list">
       <section class="feature" id="virtualreality">
@@ -143,14 +143,14 @@
             </div>
           </div>
       </section>
-      <section class="feature" id="accessibility">
+      <section class="feature" id="tilt">
         <header class="feature-head">
           <div class="feature-meta"><span class="chip">Features</span></div>
-          <h2>Accessibility</h2>
+          <h2>Tilt</h2>
           <p class="tagline">Tilt the table, not the controls</p>
         </header>
           <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/demeo/accessibility.mp4" poster="assets/images/demeo/accessibility.jpg" aria-label="Tilting the Demeo board to reduce neck strain"></video></figure>
+            <figure class="media"><video data-autoplay data-src="assets/video/demeo/tilt.mp4" poster="assets/images/demeo/tilt.jpg" aria-label="Tilting the Demeo board to reduce neck strain"></video></figure>
             <div>
               <p>Tilt is a VR feature that reduces neck strain, since the gameplay takes place on a game board below you. It lets players tilt their avatar, with an animated motion, so the board appears to lean towards them.</p>
               <p>Improving it was my first task on Demeo. Rotating while tilted didn't work as expected: past around 90&deg; rotating left started turning you right and vice versa, until the controls were fully reversed at the maximum tilt of 180&deg;. After some thought and experimentation I fixed it with a single line of vector multiplication, code that has since been reused in <a href="demeobattles.html">Demeo Battles</a> and <a href="battlemarked.html">Demeo x Dungeons &amp; Dragons: Battlemarked</a>.</p>
