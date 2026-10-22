@@ -71,7 +71,7 @@
           <p class="tagline">A dungeon on your kitchen table</p>
         </header>
           <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/mixedreality.mp4" poster="assets/images/battlemarked/mixedreality.jpg"></video></figure>
+            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/mixedreality.mp4" poster="assets/images/battlemarked/mixedreality.jpg" aria-label="Battlemarked played in mixed reality, with the board in a real room"></video></figure>
             <div>
               <p>In mixed reality, players see their real room through passthrough, with the game board placed in it.</p>
               <p>When I joined, passthrough already worked but relied on the Meta SDK. I reimplemented it with OpenXR, so the same code could be reused on other headsets such as Pico.</p>
@@ -86,7 +86,7 @@
           <p class="tagline">From port to live game</p>
         </header>
           <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/playstation5.mp4" poster="assets/images/battlemarked/playstation5.jpg"></video></figure>
+            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/playstation5.mp4" poster="assets/images/battlemarked/playstation5.jpg" aria-label="Battlemarked on PlayStation&nbsp;5"></video></figure>
             <div>
               <p>Once the port was complete, I took over responsibility for the PlayStation&nbsp;5 version.</p>
               <p>I guided the game through Sony's certification process for updates that added paid downloadable content and new localisations.</p>
@@ -100,7 +100,7 @@
           <p class="tagline">Put down the controllers</p>
         </header>
           <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/handtracking.mp4" poster="assets/images/battlemarked/handtracking.jpg"></video></figure>
+            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/handtracking.mp4" poster="assets/images/battlemarked/handtracking.jpg" aria-label="Playing Battlemarked with hand tracking"></video></figure>
             <div>
               <p>I implemented hand tracking using OpenXR, building on the same foundation as the rest of the game's VR implementation.</p>
               <p>Locomotion is driven by hand gestures, with the logic to move, rotate, scale and tilt the view using only your hands.</p>
@@ -115,7 +115,7 @@
           <p class="tagline">One table, one shared board</p>
         </header>
           <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/spatialanchors.mp4" poster="assets/images/battlemarked/spatialanchors.jpg"></video></figure>
+            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/spatialanchors.mp4" poster="assets/images/battlemarked/spatialanchors.jpg" aria-label="Players sharing one Battlemarked board on a real table with spatial anchors"></video></figure>
             <div>
               <p>Players in the same physical space can share the virtual game board.</p>
               <p>The board can be placed on top of a real table, and it stays aligned to that table for everyone in the room, so players can gather around it just like a physical board game.</p>
@@ -129,7 +129,7 @@
           <p class="tagline">First impressions on every platform</p>
         </header>
           <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/intro.mp4"></video></figure>
+            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/intro.mp4" aria-label="Battlemarked intro video"></video></figure>
             <div>
               <p>I set up a system that plays a different intro video depending on the platform.</p>
               <p>In VR, the video appears in front of the player when it starts and then stays anchored in place, rather than following their head.</p>
@@ -177,7 +177,7 @@
           <p class="tagline">Easy on the neck</p>
         </header>
           <div class="feature-item">
-            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/accessibility.mp4" poster="assets/images/battlemarked/accessibility.jpg"></video></figure>
+            <figure class="media"><video data-autoplay data-src="assets/video/battlemarked/accessibility.mp4" poster="assets/images/battlemarked/accessibility.jpg" aria-label="Tilting the Battlemarked board to reduce neck strain"></video></figure>
             <div>
               <p>Tilt is a VR feature that reduces neck strain, since the gameplay takes place on a game board below you.</p>
               <p>Building on my earlier work on <a href="demeo.html">Demeo</a>, I ported the feature to Battlemarked. It needed some small changes and support for new objects, but works much the same: the tilt motion is animated, the environment can be shown or hidden, and locomotion works as expected at any angle.</p>
