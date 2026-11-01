@@ -84,7 +84,7 @@ function renderFooter() {
   <footer class="site-footer" id="contact">
     <div class="wrap">
       <div class="footer-cta">
-        <h2>Let's make something <span class="accent">playable.</span></h2>
+        <h2>Let's make something <span class="accent">playable</span></h2>
         <div class="btn-group">
           <a class="btn btn-solid btn-lg" href="mailto:${SITE.email}">Email me</a>
           <a class="btn btn-lg" href="${SITE.cv}" target="_blank" rel="noopener">Download CV</a>
